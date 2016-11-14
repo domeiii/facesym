@@ -1,3 +1,7 @@
-Name	Tätigkeit	Datum	Stundenanzahl
+Name	  TÃ¤tigkeit	                          Datum	     Stundenanzahl
 
-Julia 	Screen Design	08.11.16	3h
+Julia 	Screen Design	                      08.11.16	    3h
+Roiss   Spiegelalgorithmus/DBEinbundung     14.11.16      7h
+Domi    Spiegelalgorithmus/DBEinbundung     14.11.16      7h
+Beli    Loginsystem/Wordpresseinrichtung    14.11.16      9h
+Juli    HTML/CSS Design                     14.11.16      6h
