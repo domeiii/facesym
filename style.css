@@ -1,16 +1,21 @@
 header{
     background-color: lightgray;
-    min-width: 960px;
-    min-height: 80px;
+    margin: 0;
+    padding: 0;
     background-position: center;
 
 }
 
+li{
+    margin-bottom: 1%;
+}
+/*
 ul > a {
     margin-top: 30px;
     margin-left: 40px;
     margin-right: 40px;
-}
+}*/
+
 
 div > input{
     float: right;
@@ -46,7 +51,6 @@ body {
     color: black;
     margin: 0 auto;
     text-align: center;
-    min-width: 960px;
 }
 
 address {
@@ -88,9 +92,7 @@ nav ul li {
     display: inline;
 }
 
-.menue {
 
-}
 
 #small {
     font-size: 12px !important;
@@ -127,7 +129,8 @@ th {
 
 img {
     position: center;
-    margin-bottom: -30px;
+    margin-top: 0.5%;
+    margin-bottom: -3.5%;
 
 }
 
