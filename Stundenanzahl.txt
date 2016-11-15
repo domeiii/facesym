@@ -1,6 +1,6 @@
 Name	  Tätigkeit	                          Datum	     Stundenanzahl
 
-July  	Screen Design	                      08.11.16	    3h
+July  	Screen Design                       08.11.16	    3h
 Roiss   Spiegelalgorithmus/DBEinbundung     14.11.16      7h
 Domi    Spiegelalgorithmus/DBEinbundung     14.11.16      7h
 Beli    Loginsystem/Wordpresseinrichtung    14.11.16      9h
