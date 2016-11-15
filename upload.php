@@ -10,9 +10,9 @@
 <br><br>
     <?php
     $servername = "localhost";
-    $username = "root";
-    $password = '';
-    $dbname = "images";
+    $username = "facesym";
+    $password = 'vhzbYHE6#3F';
+    $dbname = "facesym";
     $conn = mysqli_connect($servername, $username,$password, $dbname);
     if (!$conn) {
         die("Connection failes: " .mysqli_connect_error());
@@ -32,7 +32,7 @@
 
 
             if (move_uploaded_file($_FILES['uploaded']['tmp_name'][$i], $target)) {
-                $query = "INSERT INTO images(id, name, gender) VALUES ('' , '$target', '$gender')";//insertion to database
+                $query = "INSERT INTO images(idimages, name, gender) VALUES ('' , '$target', '$gender')";//insertion to database
                 mysqli_query($conn, $query);
             } else {
                 echo "Sorry, there was a problem uploading your file.";
