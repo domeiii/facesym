@@ -8,46 +8,48 @@
 ?>
 <body>
 <br><br>
-<center>
     <?php
     $servername = "localhost";
     $username = "root";
     $password = '';
     $dbname = "images";
     $conn = mysqli_connect($servername, $username,$password, $dbname);
-
     if (!$conn) {
         die("Connection failes: " .mysqli_connect_error());
     }
-    //code for uploading videos...
     if(isset($_POST['image'])){//button for Upload
-        $target = "Images/"; //folder where to save the uploaded file/video
-        $target = $target . basename( $_FILES['uploaded']['name']) ; //gets the name of the upload file
-        $ok=1;
-        if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target))
-        {
+        $total = count($_FILES['uploaded']['tmp_name']);
+        for($i=0; $i<$total; $i++) {
+            $target = "Images/"; //folder where to save the uploaded file/video
+            $target = $target . basename($_FILES['uploaded']['name'][$i]); //gets the name of the upload file
+            $ok = 1;
 
-            $query ="INSERT INTO images(id, name) VALUES ('' , '$target' )";//insertion to database
-            echo "succ";
-            mysqli_query($conn, $query);
-            echo "Success";
+            $re = '/(AM)|(BM)|(LM)|(WM)/';
+            $gender = "f";
+            if (preg_match($re, $target)) {
+                $gender = "m";
+            }
 
 
-        }
-        else {
-            echo "Sorry, there was a problem uploading your file.";
+            if (move_uploaded_file($_FILES['uploaded']['tmp_name'][$i], $target)) {
+                $query = "INSERT INTO images(id, name, gender) VALUES ('' , '$target', '$gender')";//insertion to database
+                mysqli_query($conn, $query);
+            } else {
+                echo "Sorry, there was a problem uploading your file.";
+            }
         }
     }
     mysqli_close($conn);
     ?>
 
+
     <form enctype="multipart/form-data" method="POST">
-        Please choose a file: <input name="uploaded" type="file" /><br />
-        <input type="submit" value="Upload" name="image"/>
+        Please choose a file: <input name="uploaded[]" type="file" multiple/><br />
+        <input type="submit" value="Upload" name="image" />
     </form>
 
     <br><br>
     <br>
-</center>
+
 </body>
 </html>
