@@ -6,4 +6,7 @@ Domi    Spiegelalgorithmus/DBEinbundung     14.11.16      7h
 Beli    Loginsystem/Wordpresseinrichtung    14.11.16      9h
 July    HTML/CSS Design                     14.11.16      6h
 Roiss   Bootstrap Cheatsheet/Example        14.11.16      2h
-July    HTML/CSS/Bootstrap                  15.11.16      7h
+July    HTML/CSS/Bootstrap                  15.11.16      7,5h
+Domi    Datenbanken                         15.11.16      7,5h
+Belinda JS/Login                            15.11.16      7,5h
+Roiss   Datenbanken/Registrierung           15.11.16      7,5h
