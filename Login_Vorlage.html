@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Formularfeldüberprüfung mit JavaScript DOM</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+<main>
+    <div id="center">
+        <header>
+            <h1>Bitte registrieren Sie sich!</h1>
+            <p><em>Felder mit * müssen ausgefüllt werden.</em></p>
+        </header>
+        <form action="mailto:S1510238016@students.fh-hagenberg.at" method="post" enctype="text/plain" id="registerform"
+              novalidate>
+            <fieldset>
+                <legend>Persönliche Angaben</legend>
+                <div class="textinput">
+                    <label for="username">Benutzername: * </label>
+                    <input type="text" id="username" name="name" placeholder="MaxMustermensch">
+                </div>
+                <div class="textinput">
+                    <label for="email">E-Mail-Adresse: * </label>
+                    <input type="email" id="email" name="email" placeholder="max@mustermensch.com">
+                </div>
+                <div class="textinput">
+                    <label for="strasse">Straße: </label>
+                    <input type="text" id="strasse" name="strasse" placeholder="Musterstraße 12">
+                </div>
+                <div class="row">
+                    <div class="textinput left30">
+                        <label for="plz">PLZ: </label>
+                        <input type="text" id="plz" name="plz" placeholder="1234">
+                    </div>
+                    <div class="textinput right70">
+                        <label for="ort">Ort: </label>
+                        <input type="text" id="ort" name="ort" placeholder="Musterhausen">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Passwort wählen</legend>
+                <div class="textinput">
+                    <label for="passwort1">Passwort: * </label>
+                    <input type="password" id="passwort1" name="passwort1" placeholder="Wählen Sie ein Passwort">
+                </div>
+                <div class="textinput">
+                    <label for="passwort2">Passwort-Wiederholung: * </label>
+                    <input type="password" id="passwort2" name="passwort2" placeholder="Wiederholen Sie Ihr Passwort">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Ich besitze folgende Hardware</legend>
+                <div class="checkboxError" id="checkboxErrorField"></div>
+                <div class="checkbox">
+                    <label for="hardware1">Desktop PC oder Notebook)</label>
+                    <input type="checkbox" id="hardware1" name="hardware1" value="PC">
+                </div>
+                <div class="checkbox">
+                    <label for="hardware2">Mac Pro, iMac oder MacBook</label>
+                    <input type="checkbox" id="hardware2" name="hardware2" value="Mac">
+                </div>
+                <div class="checkbox">
+                    <label for="hardware3">iPhone oder iPad</label>
+                    <input type="checkbox" id="hardware3" name="hardware3" value="iOS">
+                </div>
+                <div class="checkbox">
+                    <label for="hardware4">Android Phone oder Tablet</label>
+                    <input type="checkbox" id="hardware4" name="hardware4" value="Android">
+                </div>
+                <div class="checkbox">
+                    <label for="hardware5">Windows Phone oder Tablet</label>
+                    <input type="checkbox" id="hardware5" name="hardware5" value="Windows">
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="submit left70">
+                    <button type="submit">Registrieren</button>
+                    <div class="ease"></div>
+                </div>
+                <div class="reset right30">
+                    <button type="reset">Reset</button>
+                    <div class="ease"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
