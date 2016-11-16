@@ -92,7 +92,6 @@ if(isset($_GET['register'])) {
         $query = mysqli_query($con, "SELECT id FROM users WHERE email = '$email'");
         $row = mysqli_fetch_array($query,MYSQLI_NUM );
         $userid = $row[0];
-        echo $userid;
 
         $statement2 = $pdo->prepare("INSERT INTO user_stat (userid, questions_answered,right_q,wrong_q,points,games_p,right_q_men,right_q_women,wrong_q_men,wrong_q_women) VALUES (:userid, :questions_answered,:right_q,:wrong_q,:points,:games_p,:right_q_men,:right_q_women,:wrong_q_men,:wrong_q_women)");
         $result2 = $statement2->execute(array('userid'=> $userid, 'questions_answered'=> 0,'right_q'=>0,'wrong_q'=>0,'points'=>0,'games_p'=>0,'right_q_men'=>0,'right_q_women'=>0,'wrong_q_men'=>0,'wrong_q_women'=>0));
