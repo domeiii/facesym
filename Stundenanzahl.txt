@@ -10,4 +10,5 @@ July    HTML/CSS/Bootstrap                  15.11.16      7,5h
 Domi    Datenbanken                         15.11.16      7,5h
 Belinda JS/Login                            15.11.16      7,5h
 Roiss   Datenbanken/Registrierung           15.11.16      7,5h
-July    Content anlegen/einbinden           16.11.16
+July    Content anlegen/einbinden           16.11.16      7,5h
+
