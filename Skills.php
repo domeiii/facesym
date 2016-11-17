@@ -281,16 +281,17 @@
                         <h3>Skills</h3>
                         <br>
                         <div class="col-md-11">
-                            <p>Correct answers</p>
+                            <p><strong>Correct answers:</strong>    <?php echo $percentage_total ."%" ?></p>
 
                             <div class="progress">
                                 <div data-percentage="0%" style="width: <?php echo $percentage_total ."%" ?>;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <p>Correct guessed men</p>
+
+                            <p><strong>Correct guessed men:</strong> <?php echo $percentage_m ."%"?></p>
                             <div class="progress">
                                 <div data-percentage="0%" style="width: <?php echo $percentage_m ."%"?>;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <p>Correct guessed women</p>
+                            <p><strong>Correct guessed women:</strong> <?php echo $percentage_w ."%"?></p>
                             <div class="progress">
                                 <div data-percentage="0%" style="width: <?php echo $percentage_w ."%"?>;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
