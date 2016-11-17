@@ -15,3 +15,6 @@ Domi    Spielalgo                                    16.11.16      8h
 Beli    Userpage/Login                               16.11.16      8h
 Roiss   Login CSS/PHP Merge                          16.11.16      8h
 July    Javascript-impl.Profile-Content+Gamepage     17.11.16      9h
+Roiss   PHP/HTML Merge/Profilpage                    17.11.16      9h
+Domi    Spielimplementierung                         17.11.16      9h
+Beli    Highscore/Profilpage                         17.11.16      9h
