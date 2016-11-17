@@ -1,17 +1,17 @@
 Name	  Tätigkeit	                          Datum	     Stundenanzahl
 
-July  	Screen Design                       08.11.16	    3h
-Roiss   Spiegelalgorithmus/DBEinbundung     14.11.16      7h
-Domi    Spiegelalgorithmus/DBEinbundung     14.11.16      7h
-Beli    Loginsystem/Wordpresseinrichtung    14.11.16      9h
-July    HTML/CSS Design                     14.11.16      6h
-Roiss   Bootstrap Cheatsheet/Example        14.11.16      2h
-July    HTML/CSS/Bootstrap                  15.11.16      7,5h
-Domi    Datenbanken                         15.11.16      7,5h
-Belinda JS/Login                            15.11.16      7,5h
-Roiss   Datenbanken/Registrierung           15.11.16      7,5h
-July    Content anlegen/einbinden           16.11.16      7,5h
-Domi    Spielalgo                           16.11.16      8h
-Beli    Userpage/Login                      16.11.16      8h
-Roiss   Login CSS/PHP Merge                 16.11.16      8h
-July    Javascript-impl. Profile-Content    17.11.16
+July  	Screen Design                                08.11.16	     3h
+Roiss   Spiegelalgorithmus/DBEinbundung              14.11.16      7h
+Domi    Spiegelalgorithmus/DBEinbundung              14.11.16      7h
+Beli    Loginsystem/Wordpresseinrichtung             14.11.16      9h
+July    HTML/CSS Design                              14.11.16      6h
+Roiss   Bootstrap Cheatsheet/Example                 14.11.16      2h
+July    HTML/CSS/Bootstrap                           15.11.16      7,5h
+Domi    Datenbanken                                  15.11.16      7,5h
+Belinda JS/Login                                     15.11.16      7,5h
+Roiss   Datenbanken/Registrierung                    15.11.16      7,5h
+July    Content anlegen/einbinden                    16.11.16      7,5h
+Domi    Spielalgo                                    16.11.16      8h
+Beli    Userpage/Login                               16.11.16      8h
+Roiss   Login CSS/PHP Merge                          16.11.16      8h
+July    Javascript-impl.Profile-Content+Gamepage     17.11.16      9h
