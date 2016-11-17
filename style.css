@@ -6,6 +6,13 @@ header{
 
 }
 
+#googleMap {
+    width: 100%; /* Span the entire width of the screen */
+    height: 500px; /* Set the height to 400 pixels */
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); /* Change the color of the map to black and white */
+}
+
 li{
     margin-bottom: 1%;
 }
@@ -37,7 +44,16 @@ p {font-size: 16px;}
 .container-fluid {
     padding-top: 10%;
     padding-bottom: 10%;
+    margin-top: -5%;
 }
+
+.source{
+    font-size: 10pt !important;
+}
+
+#particles{height:250px}
+
+
 .navbar {
     padding-top: 1%;
     padding-bottom: 1%;
@@ -167,14 +183,6 @@ h3 em {
     text-decoration: underline;
 }
 
-table, td, th {
-    border: 1px solid gray;
-}
-
-th {
-    background-color: black;
-}
-
 
 #col1 {
     width: 130px;
@@ -224,9 +232,9 @@ textarea {
     float: left;
 }
 
-tr:nth-child(2n) {
+/*tr:nth-child(2n) {
     background-color: gray;
-}
+}*/
 
 #box {
     width: 210px;
