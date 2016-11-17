@@ -25,10 +25,10 @@ if (isset($_POST['username']) && isset($_POST['username'])) {
             setcookie("identifier", $identifier, time() + (3600 * 24 * 365)); //Valid for 1 year
             setcookie("securitytoken", $securitytoken, time() + (3600 * 24 * 365)); //Valid for 1 year
         }
-        header('Location: ./profilepage.php');
+        header("Location: ./profilepage.php");
         exit;
     } else {
-        $error_msg = "Username oder Passwort war ung�ltig<br><br>";
+        header("Location: ./login.php?esg=Login failed");
     }
 
 }

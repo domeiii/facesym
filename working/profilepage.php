@@ -249,7 +249,7 @@
             <div class="navbar-header">
                 <ul class="nav navbar-nav navbar-left">
 
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a></a></li>
                     <li><a href="info.html">Info</a></li>
                 </ul>
@@ -266,9 +266,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <li><a></a></li>
-                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="profilepage.php">Profile</a></li>
                 </ul>
             </div>
         </div>
@@ -282,13 +282,13 @@
     $(document).ready(function () {
         $('a[id=click1]').click(function () {
             event.preventDefault();
-            $("#div1").load("skills.php");
+            $("#div1").load("Skills.php");
         });
     });
     $(document).ready(function () {
         $('a[id=click2]').click(function () {
             event.preventDefault();
-            $("#div1").load("highscores.html");
+            $("#div1").load("highscore.php");
         });
     });
     $(document).ready(function () {
@@ -334,11 +334,6 @@ mysqli_free_result($result2);
 ?>
 
 <!-- First Container -->
-<!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
--->
 
 <div class="container">
     <div class="row profile">
@@ -352,7 +347,7 @@ Licensed under MIT
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        <?php echo $username ?>
+                        <a href="profilepage.php" <?php echo $username?>
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
@@ -360,12 +355,12 @@ Licensed under MIT
                 <div class="profile-usermenu">
                     <ul class="nav">
                         <li>
-                            <a href="skills.html" id="click1">
+                            <a href="Skills.php" id="click1">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Skills </a>
                         </li>
                         <li>
-                            <a href="highscores.html" id="click2">
+                            <a href="highscore.php" id="click2">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Highscores </a>
                         </li>

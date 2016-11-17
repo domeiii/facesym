@@ -169,9 +169,9 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.php">Login</a></li>
                 <li><a href="#"></a></li>
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="profilepage.php">Profile</a></li>
             </ul>
         </div>
     </div>
@@ -233,7 +233,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=images', 'root', '');
                 </div>
                 <div class="panel-body">
                     <form id="login" method="post" action="loginform.php">
-
+                        <p><?php echo isset($_GET["esg"])?$_GET["esg"]:"";?></p>
                         <input name="username" type="text" placeholder="Username" class="input pass" required="required" autofocus="autofocus"/>
                         <input name="passwort" type="password" placeholder="Password" required="required"
                                class="input pass" autofocus="autofocus"/>
