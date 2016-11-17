@@ -14,4 +14,4 @@ July    Content anlegen/einbinden           16.11.16      7,5h
 Domi    Spielalgo                           16.11.16      8h
 Beli    Userpage/Login                      16.11.16      8h
 Roiss   Login CSS/PHP Merge                 16.11.16      8h
-
+July    Javascript-impl. Profile-Content    17.11.16
