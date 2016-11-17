@@ -26,41 +26,38 @@
 
     <link rel="stylesheet" href="style.css">
     <?php
-//$pdo = new PDO('mysql:host=localhost;dbname=facesymtest', 'root', '');
-$m=mysqli_connect("localhost","root","","images");
-
-session_start();
-$username = $_SESSION['username'];
-$userid = $_SESSION['userid'];
-
-$query = sprintf("SELECT * FROM user_stat
+    //$pdo = new PDO('mysql:host=localhost;dbname=facesymtest', 'root', '');
+    $m=mysqli_connect("localhost","root","","facesymtest");
+    session_start();
+    $username = $_SESSION['username'];
+    $userid = $_SESSION['userid'];
+    $query = sprintf("SELECT * FROM user_stat
     WHERE userid='%s'", mysqli_real_escape_string($m,$userid));
-$result = mysqli_query($m,$query);
-if (!$result) {
-    $message  = 'Ung�ltige Abfrage: ' . mysqli_error($m) . "\n";
-    $message .= 'Gesamte Abfrage: ' . $query;
-    die($message);
-}
-while ($row = mysqli_fetch_assoc($result)) {
-    $games = $row['games_p'];
-    $right_q = $row['right_q'];
-    $questions_answered = $row['questions_answered'];
-    $wrong_q = $row['wrong_q'];
-    $points = $row['points'];
-    $right_q_men = $row['right_q_men'];
-    $wrong_q_men = $row['wrong_q_men'];
-    $right_q_women = $row['right_q_women'];
-    $wrong_q_women = $row['wrong_q_women'];
-
-    if ($games > 0) {
-        $percentage_total=$questions_answered/$right_q; // Wieviel Prozent hat man richtig beantwortet?
-        $questions_w=$right_q_women+$wrong_q_women; // Wieviele Frauenfragen hat man insg beantwortet?
-        $questions_m=$right_q_men+$wrong_q_men; // Wieviele M�nnerfragen hat man insg beantwortet?
-        $percentage_w=$questions_w/$right_q_women; // Wieviele Frauenfragen hat man richtig beantwortet?
-        $percentage_m=$questions_m/$right_q_men; // Wieviele M�nnerfragen hat man richtig beantwortet?
+    $result = mysqli_query($m,$query);
+    if (!$result) {
+        $message  = 'Ung?ltige Abfrage: ' . mysqli_error($m) . "\n";
+        $message .= 'Gesamte Abfrage: ' . $query;
+        die($message);
     }
-}
-mysqli_free_result($result);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $games = $row['games_p'];
+        $right_q = $row['right_q'];
+        $questions_answered = $row['questions_answered'];
+        $wrong_q = $row['wrong_q'];
+        $points = $row['points'];
+        $right_q_men = $row['right_q_men'];
+        $wrong_q_men = $row['wrong_q_men'];
+        $right_q_women = $row['right_q_women'];
+        $wrong_q_women = $row['wrong_q_women'];
+        if ($games > 0) {
+            $percentage_total=($questions_answered/$right_q)*100; // Wieviel Prozent hat man richtig beantwortet?
+            $questions_w=$right_q_women+$wrong_q_women; // Wieviele Frauenfragen hat man insg beantwortet?
+            $questions_m=$right_q_men+$wrong_q_men; // Wieviele M?nnerfragen hat man insg beantwortet?
+            $percentage_w=($questions_w/$right_q_women)*100; // Wieviele Frauenfragen hat man richtig beantwortet?
+            $percentage_m=($questions_m/$right_q_men)*100; // Wieviele M?nnerfragen hat man richtig beantwortet?
+        }
+    }
+    mysqli_free_result($result);
     ?>
 </head>
 <style>
@@ -287,15 +284,15 @@ mysqli_free_result($result);
                             <p>Correct answers</p>
 
                             <div class="progress">
-                                <div data-percentage="<?php echo $percentage_normal*100 ?>" style="width: 60%;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div data-percentage="0%" style="width: <?php echo $percentage_total ."%" ?>;" class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <p>Correct guessed men</p>
                             <div class="progress">
-                                <div data-percentage="<?php echo $percentage_m*100 ?>" style="width: 40%;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div data-percentage="0%" style="width: <?php echo $percentage_m ."%"?>;" class="progress-bar progress-bar-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <p>Correct guessed women</p>
                             <div class="progress">
-                                <div data-percentage="<?php echo $percentage_w*100 ?>" style="width: 20%;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div data-percentage="0%" style="width: <?php echo $percentage_w ."%"?>;" class="progress-bar progress-bar-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
