@@ -31,15 +31,18 @@
     body {
         background: #f8f8f8;
     }
+
     /* Profile container */
     .profile {
         margin: 20px 0;
     }
+
     /* Profile sidebar */
     .profile-sidebar {
         padding: 20px 0 10px 0;
         background: #fff;
     }
+
     .profile-userpic img {
         float: none;
         margin: 0 auto;
@@ -49,16 +52,19 @@
         -moz-border-radius: 50% !important;
         border-radius: 50% !important;
     }
+
     .profile-usertitle {
         text-align: center;
         margin-top: 20px;
     }
+
     .profile-usertitle-name {
         color: #5a7391;
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 7px;
     }
+
     .profile-usertitle-job {
         text-transform: uppercase;
         color: #5b9bd1;
@@ -66,10 +72,12 @@
         font-weight: 600;
         margin-bottom: 15px;
     }
+
     .profile-userbuttons {
         text-align: center;
         margin-top: 10px;
     }
+
     .profile-userbuttons .btn {
         text-transform: uppercase;
         font-size: 11px;
@@ -77,49 +85,61 @@
         padding: 6px 15px;
         margin-right: 5px;
     }
+
     .profile-userbuttons .btn:last-child {
         margin-right: 0px;
     }
+
     .profile-usermenu {
         margin-top: 30px;
     }
+
     .profile-usermenu ul li {
         border-bottom: 1px solid #f0f4f7;
     }
+
     .profile-usermenu ul li:last-child {
         border-bottom: none;
     }
+
     .profile-usermenu ul li a {
         color: #93a3b5;
         font-size: 14px;
         font-weight: 400;
     }
+
     .profile-usermenu ul li a i {
         margin-right: 8px;
         font-size: 14px;
     }
+
     .profile-usermenu ul li a:hover {
         background-color: #fafcfd;
         color: #5b9bd1;
     }
+
     .profile-usermenu ul li.active {
         border-bottom: none;
     }
+
     .profile-usermenu ul li.active a {
         color: #5b9bd1;
         background-color: #f6f9fb;
         border-left: 2px solid #5b9bd1;
         margin-left: -2px;
     }
+
     /* Profile Content */
     .profile-content {
         padding: 20px;
         background: #fff;
         min-height: 460px;
     }
+
     .h3_points {
         text-align: center;
     }
+
     .progress {
         height: 20px;
         margin-bottom: 20px;
@@ -129,6 +149,7 @@
         -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     }
+
     .progress {
         background-image: -webkit-gradient(linear, left 0, left 100%, from(#ebebeb), to(#f5f5f5));
         background-image: -webkit-linear-gradient(top, #ebebeb 0, #f5f5f5 100%);
@@ -137,12 +158,14 @@
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
     }
+
     .progress {
         height: 12px;
         background-color: #ebeef1;
         background-image: none;
         box-shadow: none;
     }
+
     .progress-bar {
         float: left;
         width: 0;
@@ -157,6 +180,7 @@
         -webkit-transition: width .6s ease;
         transition: width .6s ease;
     }
+
     .progress-bar {
         background-image: -webkit-gradient(linear, left 0, left 100%, from(#428bca), to(#3071a9));
         background-image: -webkit-linear-gradient(top, #428bca 0, #3071a9 100%);
@@ -165,6 +189,7 @@
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3071a9', GradientType=0);
     }
+
     .progress-bar {
         box-shadow: none;
         border-radius: 3px;
@@ -181,6 +206,7 @@
         -o-transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
         transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
     }
+
     .progress-bar-success {
         background-image: -webkit-gradient(linear, left 0, left 100%, from(#5cb85c), to(#449d44));
         background-image: -webkit-linear-gradient(top, #5cb85c 0, #449d44 100%);
@@ -189,10 +215,12 @@
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0);
     }
+
     .progress-bar-success {
         background-color: #0AA699;
         background-image: none;
     }
+
     .progress-bar-info {
         background-image: -webkit-gradient(linear, left 0, left 100%, from(#5bc0de), to(#31b0d5));
         background-image: -webkit-linear-gradient(top, #5bc0de 0, #31b0d5 100%);
@@ -201,10 +229,12 @@
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff31b0d5', GradientType=0);
     }
+
     .progress-bar-info {
         background-color: #0090D9;
         background-image: none;
     }
+
     .progress-bar-warning {
         background-image: -webkit-gradient(linear, left 0, left 100%, from(#f0ad4e), to(#ec971f));
         background-image: -webkit-linear-gradient(top, #f0ad4e 0, #ec971f 100%);
@@ -213,10 +243,12 @@
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffec971f', GradientType=0);
     }
+
     .progress-bar-warning {
         background-color: #FDD01C;
         background-image: none;
     }
+
     .progress-bar-danger {
         background-image: -webkit-gradient(linear, left 0, left 100%, from(#d9534f), to(#c9302c));
         background-image: -webkit-linear-gradient(top, #d9534f 0, #c9302c 100%);
@@ -225,16 +257,15 @@
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc9302c', GradientType=0);
     }
+
     .progress-bar-danger {
         background-color: #F35958;
         background-image: none;
     }
+
     .points {
         color: #0aa699;
         font-weight: bold;
-    }
-    .panel-body {
-        text-align: left;
     }
 </style>
 
@@ -249,7 +280,7 @@
             <div class="navbar-header">
                 <ul class="nav navbar-nav navbar-left">
 
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a></a></li>
                     <li><a href="info.html">Info</a></li>
                 </ul>
@@ -266,9 +297,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a href="login.php">Login</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><a></a></li>
-                    <li><a href="profilepage.php">Profile</a></li>
+                    <li><a href="profile.html">Profile</a></li>
                 </ul>
             </div>
         </div>
@@ -282,13 +313,13 @@
     $(document).ready(function () {
         $('a[id=click1]').click(function () {
             event.preventDefault();
-            $("#div1").load("Skills.php");
+            $("#div1").load("skills.html");
         });
     });
     $(document).ready(function () {
         $('a[id=click2]').click(function () {
             event.preventDefault();
-            $("#div1").load("highscore.php");
+            $("#div1").load("highscores.html");
         });
     });
     $(document).ready(function () {
@@ -303,14 +334,17 @@
 $con=mysqli_connect("localhost","root","","facesymtest");
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];#
+
 $query = sprintf("SELECT * FROM users
     WHERE id='%s'", mysqli_real_escape_string($con,$userid));
 $result = mysqli_query($con,$query);
+
 if (!$result) {
     $message  = 'Ung�ltige Abfrage: ' . mysqli_error($con) . "\n";
     $message .= 'Gesamte Abfrage: ' . $query;
     die($message);
 }
+
 while ($row = mysqli_fetch_assoc($result)) {
     $email = $row['email'];
     $country = $row['country'];
@@ -319,21 +353,31 @@ while ($row = mysqli_fetch_assoc($result)) {
     $registed = $row['created_at'];
 }
 mysqli_free_result($result);
+
 $query2 = sprintf("SELECT * FROM user_stat
     WHERE userid='%s'", mysqli_real_escape_string($con,$userid));
 $result2 = mysqli_query($con,$query2);
+
 if (!$result2) {
     $message  = 'Ung�ltige Abfrage: ' . mysqli_error($con) . "\n";
     $message .= 'Gesamte Abfrage: ' . $query;
     die($message);
 }
+
 while ($row2 = mysqli_fetch_assoc($result2)) {
+
     $totalgames = $row2['questions_answered'];
 }
 mysqli_free_result($result2);
+
 ?>
 
 <!-- First Container -->
+<!--
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
 
 <div class="container">
     <div class="row profile">
@@ -347,7 +391,7 @@ mysqli_free_result($result2);
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        <a href="profilepage.php" <?php echo $username?>
+                        Username
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
@@ -360,7 +404,7 @@ mysqli_free_result($result2);
                                 Skills </a>
                         </li>
                         <li>
-                            <a href="highscore.php" id="click2">
+                            <a href="highscores.php" id="click2">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Highscores </a>
                         </li>
@@ -378,7 +422,7 @@ mysqli_free_result($result2);
             <div class="profile-content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <h3>Herzlich Willkommen auf Deiner Profilseite</h3>
                             <br>
                         </div>
@@ -386,11 +430,11 @@ mysqli_free_result($result2);
                 </div>
                 <div class="col-md-12">
                     <div class="panel panel-info">
-                        <div class="panel-header" style="margin-left: -12%">
+                        <div class="panel-header">
                             <h3><strong>Username: </strong> <?php echo $username ?> </h3>
                         </div>
 
-                        <div class="panel-body" style="margin-left: 30%">
+                        <div class="panel-body">
                             <p><strong> E-Mail: </strong> <?php echo $email ?></p>
                             <p><strong> Country: </strong> <?php echo $country ?> </p>
                             <p><strong> Sex: </strong><?php echo $sex ?> </p>
