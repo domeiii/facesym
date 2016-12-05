@@ -72,6 +72,11 @@
     <?php
     session_start();
 
+    if (!isset($_SESSION['user'])){
+       echo "Please Login to play the game";
+    }
+    else {
+    
     //if game is on and he decided between 10 pictures
     if (isset($_SESSION['games']) && $_SESSION['games'] === 10){
         echo "Spiel beendet";
@@ -113,6 +118,7 @@
                 echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
             }
         }
+    }
     }
     ?>
 
@@ -164,7 +170,7 @@
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a><br><br>
     <p><a href="mailto:S1510238016@students.fh-hagenberg.at?subject=Feedback%20FaceSym&amp;body=Liebes%20Pro3-Team,"><address>Wishes, suggestions, complaints,...?!</address></a> <br>
-        <br><address><a id="autor">© Julia Flath, Dominik Kolberger, Matthias Roiss, Belinda Thaler</a><br></address>
+        <br><address><a id="autor">Â© Julia Flath, Dominik Kolberger, Matthias Roiss, Belinda Thaler</a><br></address>
     </p>
 </footer>
 
