@@ -23,6 +23,7 @@ else {
     mysqli_query($conn, $updategamespw);
 }
 mysqli_close($conn);
-session_destroy();
-session_start();
+
+unset($_SESSION["pictur"]);
+
 ?>
