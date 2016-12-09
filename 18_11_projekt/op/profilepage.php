@@ -128,6 +128,7 @@ if (!$result2) {
 }
 while ($row2 = mysqli_fetch_assoc($result2)) {
     $totalgames = $row2['questions_answered']/10;
+    $totalgames=$totalgames%10;
 }
 mysqli_free_result($result2);
 ?>
