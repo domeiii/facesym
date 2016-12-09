@@ -85,7 +85,7 @@
 
             <script language="javascript" type="text/javascript">
                 $.ajax({url: "/op/updateGames.php", async: false});
-               // window.location.reload();
+                // window.location.reload();
             </script>
 
             <?php
@@ -160,7 +160,6 @@
 
 
 </div>
-
 
 <!-- Footer -->
 <footer class="text-center">
