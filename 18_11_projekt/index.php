@@ -71,54 +71,52 @@
 
     <?php
     session_start();
-
-    if (!isset($_SESSION['user'])){
-       echo "Please Login to play the game";
+    if (!isset($_SESSION['username'])){
+        echo "Please Login to play the game";
     }
     else {
-    
-    //if game is on and he decided between 10 pictures
-    if (isset($_SESSION['games']) && $_SESSION['games'] === 10){
-        echo "Spiel beendet";
-        echo "Richtige";
-        echo $_SESSION['right'];
-        echo "Falsche";
-        echo $_SESSION['wrong']; ?>
+        //if game is on and he decided between 10 pictures
+        if (isset($_SESSION['games']) && $_SESSION['games'] === 10){
+            echo "Spiel beendet";
+            echo "Richtige";
+            echo $_SESSION['right'];
+            echo "Falsche";
+            echo $_SESSION['wrong']; ?>
 
-        <script language="javascript" type="text/javascript">
-            $.ajax({url: "/op/updateGames.php", async: false});
-            window.location.reload();
-        </script>
+            <script language="javascript" type="text/javascript">
+                $.ajax({url: "/op/updateGames.php", async: false});
+               // window.location.reload();
+            </script>
 
-        <?php
-        echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Erneut spielen</button>";
-    }
+            <?php
+            echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Erneut spielen</button>";
+        }
 // else if no game is in process
-    else {
-        //if no picture is set he can start the game
-        if (!isset($_SESSION['pictur'])) {
-            echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Spiel starten</button>";
-            //else if picture is set/game is on show pictures
-        } else {
-            //show right picture on the left
-            if ($_SESSION['random'] === 1) {
-                echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
-                echo "&nbsp;";
-                echo "&nbsp;";
-                echo "&nbsp;";
-                echo "&nbsp;";
-                echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateWrongQuestion()\" style=\"transform:scaleX(-1)\" class=\"imagew\">";
-                //show right picture on the right
+        else {
+            //if no picture is set he can start the game
+            if (!isset($_SESSION['pictur'])) {
+                echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Spiel starten</button>";
+                //else if picture is set/game is on show pictures
             } else {
-                echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateWrongQuestion()\" style=\"transform:scaleX(-1)\" class=\"imagew\">";
-                echo "&nbsp;";
-                echo "&nbsp;";
-                echo "&nbsp;";
-                echo "&nbsp;";
-                echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
+                //show right picture on the left
+                if ($_SESSION['random'] === 1) {
+                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
+                    echo "&nbsp;";
+                    echo "&nbsp;";
+                    echo "&nbsp;";
+                    echo "&nbsp;";
+                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateWrongQuestion()\" style=\"transform:scaleX(-1)\" class=\"imagew\">";
+                    //show right picture on the right
+                } else {
+                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateWrongQuestion()\" style=\"transform:scaleX(-1)\" class=\"imagew\">";
+                    echo "&nbsp;";
+                    echo "&nbsp;";
+                    echo "&nbsp;";
+                    echo "&nbsp;";
+                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
+                }
             }
         }
-    }
     }
     ?>
 
