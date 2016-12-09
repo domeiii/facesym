@@ -119,7 +119,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 mysqli_free_result($result);
 $query2 = sprintf("SELECT * FROM user_stat
-    WHERE userid='%s'", mysqli_real_escape_string($con,$userid));
+    WHERE usersid='%s'", mysqli_real_escape_string($con,$userid));
 $result2 = mysqli_query($con,$query2);
 if (!$result2) {
     $message  = 'Ung�ltige Abfrage: ' . mysqli_error($con) . "\n";
@@ -127,7 +127,7 @@ if (!$result2) {
     die($message);
 }
 while ($row2 = mysqli_fetch_assoc($result2)) {
-    $totalgames = $row2['questions_answered'];
+    $totalgames = $row2['questions_answered']/10;
 }
 mysqli_free_result($result2);
 ?>
