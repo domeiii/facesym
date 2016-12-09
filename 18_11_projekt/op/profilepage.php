@@ -151,7 +151,7 @@ Licensed under MIT
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        Username
+                        <?php echo $_SESSION['username'] ?>
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
