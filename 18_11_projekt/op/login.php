@@ -86,6 +86,12 @@
 </nav>
 <?php
 $pdo = new PDO('mysql:host=localhost;dbname=facesym', 'facesym', 'vhzbYHE6#3F');
+session_start();
+
+if (isset ($_SESSION['username'])) {
+    header("Location: ./red.php");
+}
+
 ?>
 <!-- REGISTER FORM -->
 <div class="container-fluid">
