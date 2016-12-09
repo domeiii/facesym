@@ -119,7 +119,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $email = $row['email'];
     $country = $row['country'];
     $sex = $row['sex'];
-    $date = $row['date'];
+    $age = $row['age'];
     $registed = $row['created_at'];
 }
 mysqli_free_result($result);
@@ -209,7 +209,7 @@ Licensed under MIT
                             <p><strong> E-Mail: </strong> <?php echo $email ?></p>
                             <p><strong> Country: </strong> <?php echo $country ?> </p>
                             <p><strong> Sex: </strong><?php echo $sex ?> </p>
-                            <p><strong> Birthdate: </strong><?php echo $date?></p>
+                            <p><strong> Age: </strong><?php echo $age?></p>
                             <p><strong> Registered since: </strong><?php echo $registed?></p>
                             <p><strong> Total Games: </strong><?php echo $totalgames?></p>
                         </div>
