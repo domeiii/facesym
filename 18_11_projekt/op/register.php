@@ -1,4 +1,5 @@
 <?php
+include ("passwort.php");
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=facesym', 'facesym', 'vhzbYHE6#3F');
 $con=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
@@ -9,12 +10,12 @@ $con=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
     $passwort2 = $_POST['passwort2'];
     $country = $_POST['country'];
     $sex = $_POST['sex'];
-    $date = $_POST['date'];
+    $age = $_POST['age'];
 
     $usernameError = "";
     $mailError = "";
     $sexError = "";
-$dateError = "";
+$ageError = "";
 $passwordError = "";
 $generalError = "";
 
@@ -48,33 +49,34 @@ if ($passwort != $passwort2) {
         }
     if ($mailError != "Mail is already in use" && $mailError != "Please enter a valid Mail" && $passwordError != "Passwords don't match" && $passwordError != "Please enter a password" && $usernameError != "Username too long or already exists") {
         if ($sex !== "male" && $sex !== "female") {
-            $sexError = "Please chose a sex";
+            $sexError = "Please choose a sex";
         }
     }
     if ($mailError != "Mail is already in use" && $mailError != "Please enter a valid Mail" && $passwordError != "Passwords don't match" && $passwordError != "Please enter a password" && $usernameError != "Username too long or already exists" && $sexError = "Please chose a sex") {
-        if ($date == 0) {
-            $dateError = "Please choose a birthdate";
+        if ($age <= 0 || $age > 100) {
+            $ageError = "Please enter your age!";
         }
     }
-
     }
 
     //Keine Fehler, wir können den Nutzer registrieren
-if($mailError != "Mail is already in use" && $mailError != "Please enter a valid Mail" && $passwordError != "Passwords don't match" && $passwordError != "Please enter a password" && $usernameError != "Username too long or already exists" && $sexError = "Please chose a sex" && $dateError != "Please choose a birthdate") {
-    $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
+if($mailError != "Mail is already in use" && $mailError != "Please enter a valid Mail" && $passwordError != "Passwords don't match" && $passwordError != "Please enter a password" && $usernameError != "Username too long or already exists" && $sexError = "Please chose a sex" && $ageError != "Please enter your age!") {
 
-    $statement = $pdo->prepare("INSERT INTO users (username, email, passwort, country, sex, date) VALUES (:username, :email, :passwort, :country, :sex, :date )");
-    $result = $statement->execute(array('username' => $username, 'email' => $email, 'passwort' => $passwort_hash, 'country' => $country, 'sex' => $sex, 'date' => $date));
+    $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
+    echo $passwort_hash;
+
+    $statement = $pdo->prepare("INSERT INTO users (username, email, passwort, country, sex, age) VALUES (:username, :email, :passwort, :country, :sex,  :age )");
+    $result = $statement->execute(array('username' => $username, 'email' => $email, 'passwort' => $passwort_hash, 'country' => $country, 'sex' => $sex, 'age'=> $age));
 
     $query = mysqli_query($con, "SELECT id FROM users WHERE email = '$email'");
     $row = mysqli_fetch_array($query,MYSQLI_NUM );
     $userid = $row[0];
 
-    $statement2 = $pdo->prepare("INSERT INTO user_stat (userid, questions_answered,right_q,wrong_q,points,games_p,right_q_men,right_q_women,wrong_q_men,wrong_q_women) VALUES (:userid, :questions_answered,:right_q,:wrong_q,:points,:games_p,:right_q_men,:right_q_women,:wrong_q_men,:wrong_q_women)");
+    $statement2 = $pdo->prepare("INSERT INTO user_stat (usersid, questions_answered,right_q,wrong_q,points,games_p,right_q_men,right_q_women,wrong_q_men,wrong_q_women) VALUES (:userid, :questions_answered,:right_q,:wrong_q,:points,:games_p,:right_q_men,:right_q_women,:wrong_q_men,:wrong_q_women)");
     $result2 = $statement2->execute(array('userid'=> $userid, 'questions_answered'=> 0,'right_q'=>0,'wrong_q'=>0,'points'=>0,'games_p'=>0,'right_q_men'=>0,'right_q_women'=>0,'wrong_q_men'=>0,'wrong_q_women'=>0));
 
     if($result) {
-        header("Location: ./profilpage.php");
+        header("Location: ./profilepage.php");
         exit;
 
     } else {
@@ -92,8 +94,8 @@ if($mailError != "Mail is already in use" && $mailError != "Please enter a valid
         header("Location: ./login.php?msg=Username too long or already exists");
     } else if (  $sexError == "Please choose a sex") {
         header("Location: ./login.php?msg=Please choose a sex");
-    } else if (  $dateError == "Please choose a birthdate") {
-        header("Location: ./login.php?msg=Please choose a birthdate");
+    } else if (  $ageError == "Please enter your age!") {
+        header("Location: ./login.php?msg=Please enter your age!");
     } else if ( $generalError == "Registration failed, please try again") {
         header("Location: ./login.php?msg=Registration failed, please try again");
     }
