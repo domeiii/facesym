@@ -127,10 +127,7 @@ if (isset ($_SESSION['username'])) {
                                 <option value="male">Male</option>
                             </select>
                         </div>
-                        <div class="input-daterange input-group" id="datepicker">
-                            <input type="text" class="input-sm form-control" name="date"
-                                   placeholder="Select birthdate"/>
-                        </div>
+                        <input name="age" type="number" placeholder="Current age" class="input pass"/>
                         <input type="submit" value="Abschicken" class="inputButton"/>
 
                     </form>
