@@ -99,6 +99,11 @@
 </script>
 <body>
 <?php
+
+if(!isset ($_SESSION['username'])){
+    header("Location: ./login.php");
+}
+
 $con=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];#
