@@ -18,3 +18,4 @@ July    Javascript-impl.Profile-Content+Gamepage     17.11.16      9h
 Roiss   PHP/HTML Merge/Profilpage                    17.11.16      9h
 Domi    Spielimplementierung                         17.11.16      9h
 Beli    Highscore/Profilpage                         17.11.16      9h
+Beli    Bug-Fixing, Profilpage, Skills               09.12.16      5h
