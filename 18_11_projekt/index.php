@@ -76,7 +76,7 @@
     }
     else {
         //if game is on and he decided between 10 pictures
-        if (isset($_SESSION['games']) && $_SESSION['games'] === 10){
+        if (isset($_SESSION['games']) && $_SESSION['games'] >= 10){
             echo "Spiel beendet";
             echo "Richtige";
             echo $_SESSION['right'];
