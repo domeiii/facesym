@@ -30,5 +30,6 @@ $_SESSION["pictur"] = $image[0];
 $_SESSION["gender"] = $gender[0];
 $_SESSION["genderP"] = $genderP[0];
 $_SESSION["games"] = 0;
+$_SESSION["picid"] = $random;
 mysqli_close($conn);
 ?>
