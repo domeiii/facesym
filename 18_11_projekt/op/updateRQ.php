@@ -7,6 +7,11 @@ $dbname = "facesym";
 $conn = mysqli_connect($servername, $username,$password, $dbname);
 $_SESSION["right"] += 1;
 $user = $_SESSION['userid'];
+$pic = $_SESSION['picid'];
+//Update pic right
+$updatePic = "UPDATE images SET right_answered = right_answered+1 WHERE idimages=$pic";
+mysqli_query($conn, $updatePic);
+
 //UPDATE POINTS  get poins for right question---------------------------------------------------------------------------
 //USERSTATS
 $updatepoints = "UPDATE userstats SET points= points+30 WHERE useriduser =$user";
