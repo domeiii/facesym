@@ -22,5 +22,6 @@ $_SESSION["random"] = $rand;
 $_SESSION["pictur"] = $image[0];
 $_SESSION["genderP"] = $genderP[0];
 $_SESSION["games"] += 1;
+$_SESSION["picid"] = $random;
 mysqli_close($conn);
 ?>
