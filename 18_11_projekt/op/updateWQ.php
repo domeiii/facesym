@@ -7,6 +7,10 @@ $dbname = "facesym";
 $conn = mysqli_connect($servername, $username,$password, $dbname);
 $_SESSION["wrong"] += 1;
 $user = $_SESSION['userid'];
+$pic = $_SESSION['picid'];
+//Update pic wrong
+$updatePic = "UPDATE images SET wrong_answered= wrong_answered+1 WHERE idimages=$pic";
+mysqli_query($conn, $updatePic);
 //UPDATE QUESTIONS answered --------------------------------------------------------------------------------------------
 //USERSTATS
 $updatequestions = "UPDATE userstats SET questions_answered= questions_answered+1 WHERE useriduser =$user";
