@@ -108,6 +108,23 @@ echo '<div class="container">
 ?>
 <img src="../images/bsp_yes.png" alt="FaceSym Logo" id="beginning" width="100" height="100">
 <?php } echo ' 800 Points <br>
+
+'; if ($right_q<10){ ?>
+    <img src="../images/bsp_no.png" alt="FaceSym Logo" id="beginning" width="100" height="100">
+    <?php
+} else {
+?>
+<img src="../images/bsp_yes.png" alt="FaceSym Logo" id="beginning" width="100" height="100">
+<?php } echo ' 10 Right Questions <br>
+'; if ($right_q<30){ ?>
+    <img src="../images/bsp_no.png" alt="FaceSym Logo" id="beginning" width="100" height="100">
+    <?php
+} else {
+?>
+<img src="../images/bsp_yes.png" alt="FaceSym Logo" id="beginning" width="100" height="100">
+<?php } echo ' 30 Right Questions <br>
+
+
 </div>
 </div>
 </div>
