@@ -85,7 +85,7 @@
     $(document).ready(function () {
         $('a[id=click3]').click(function () {
             event.preventDefault();
-            $("#div1").load("Achievements.php");
+            $("#div1").load("achievements.php");
         });
     });
 
