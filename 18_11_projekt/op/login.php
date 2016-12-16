@@ -100,6 +100,32 @@ if (isset ($_SESSION['username'])) {
         <div class="col-sm-4">
             <div class="panel panel-info text-center">
                 <div class="panel-heading">
+                    <h2>Login</h2>
+                </div>
+                <div class="panel-body">
+                    <form id="login" method="post" action="loginform.php">
+                        <p><?php echo isset($_GET["esg"])?$_GET["esg"]:"";?></p>
+                        <input name="username" type="text" placeholder="Username" class="input pass" required="required" autofocus="autofocus"/>
+                        <input name="passwort" type="password" placeholder="Password" required="required"
+                               class="input pass" autofocus="autofocus"/>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" class="form-check-input" value="remember-me" name="angemeldet_bleiben" checked >
+                                Stay logged in
+                            </label>
+                        </div>
+                        <input type="submit" value="Einloggen!" class="inputButton"/>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!--col-md-6-->
+
+        <div class="col-sm-4">
+            <div class="panel panel-info text-center">
+                <div class="panel-heading">
                     <h2>Registration</h2>
                 </div>
                 <div class="panel-body">
@@ -130,31 +156,6 @@ if (isset ($_SESSION['username'])) {
                         <input name="age" type="number" placeholder="Current age" class="input pass"/>
                         <input type="submit" value="Abschicken" class="inputButton"/>
 
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!--col-md-6-->
-
-        <div class="col-sm-4">
-            <div class="panel panel-info text-center">
-                <div class="panel-heading">
-                    <h2>Login</h2>
-                </div>
-                <div class="panel-body">
-                    <form id="login" method="post" action="loginform.php">
-                        <p><?php echo isset($_GET["esg"])?$_GET["esg"]:"";?></p>
-                        <input name="username" type="text" placeholder="Username" class="input pass" required="required" autofocus="autofocus"/>
-                        <input name="passwort" type="password" placeholder="Password" required="required"
-                               class="input pass" autofocus="autofocus"/>
-                        <div class="checkbox">
-                            <label>
-                            <input type="checkbox" class="form-check-input" value="remember-me" name="angemeldet_bleiben" checked >
-                                Stay logged in
-                            </label>
-                        </div>
-                        <input type="submit" value="Einloggen!" class="inputButton"/>
                     </form>
                 </div>
             </div>
