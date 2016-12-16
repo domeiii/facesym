@@ -97,7 +97,13 @@
 session_start();
 
 if (isset ($_SESSION['username'])) {
-echo "Sie sind bereits eingeloggt. Möchten Sie sich"?><a href="logout.php">ausloggen</a><?php echo "?";
+    ?>
+    <br>
+    <br>
+<h3>You are already logged in. Do you want to <a href="logout.php">logout</a>?</h3>
+    <br>
+    <br>
+    <?php
 } else {
     echo "";
 }?>
