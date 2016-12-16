@@ -67,12 +67,18 @@
 
 <!-- First Container -->
 <div id ="gameupdate" class="container-fluid bg-1 text-center">
-    <h3 class="margin">Which one is the original face?</h3>
+
+    <?php session_start();
+    if (isset ($_SESSION['username'])) {
+    ?> <h3 class="margin">Which one is the original face?</h3> <?php
+    }
+    ?>
+
 
     <?php
     session_start();
     if (!isset($_SESSION['username'])){
-        echo "Please Login to play the game";
+        echo "Please "?> <a href="./op/login.php"> Login </a> <?php echo " to play the game";
     }
     else {
         //if game is on and he decided between 10 pictures
