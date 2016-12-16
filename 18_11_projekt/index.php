@@ -78,8 +78,8 @@
     <?php
     session_start();
     if (!isset($_SESSION['username'])){
-        echo "Please "?> <a href="./op/login.php"> Login </a> <?php echo " to play the game";
-    }
+        ?> <h3> Please <a href="./op/login.php">login </a> to play the game! </h3>
+    <?php }
     else {
         //if game is on and he decided between 10 pictures
         if (isset($_SESSION['games']) && $_SESSION['games'] >= 10){
