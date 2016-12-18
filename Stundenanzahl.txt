@@ -22,4 +22,5 @@ Domi    Spielimplementierung Bugfixes                22.11.16      1h
 Roiss   Register/Sicherheit                          22.11.16      2h
 Beli    Bug-Fixing, Profilpage, Skills               09.12.16      5h
 Roiss   Register/Sicherheit                          11.12.16      5h
+Domi    Spiel/Bildstatistik einzeln                  13.12.16      2h              
 Roiss   Register/Sicherheit                          18.12.16      2,5h 
