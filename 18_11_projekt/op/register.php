@@ -52,6 +52,16 @@ $con=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
         $errMsg[$passwort] = "Passwords don't match";
 
     }
+    if (!Utilities::isSex($sex))
+    {
+        $errMsg[$sex] = "Please enter your sex";
+    }
+
+    if (!Utilities::isAge($age))
+    {
+        $errMsg[$age] = "Please enter your age!";
+    }
+
 
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
     if(Utilities::isEmail($email) && !Utilities::isEmptyString($email))
@@ -76,14 +86,6 @@ $con=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
             $errMsg[$username] = "Username too long or already exists";
         }
 
-    }
-    if (!Utilities::isSex($sex))
-    {
-        $errMsg[$sex] = "Please enter your sex";
-    }
-
-    if (!Utilities::isAge($age)) {
-        $errMsg[$age] = "Please enter your age!";
     }
 
 
@@ -134,6 +136,7 @@ $con=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
         {
             $_SESSION['ageError'] = $errMsg[$age];
         }
+
         header("Location: ./login.php");
         exit;
 }

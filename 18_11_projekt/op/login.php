@@ -85,7 +85,7 @@
     </div>
 </nav>
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=facesym', 'facesym', 'vhzbYHE6#3F');
+$pdo = new PDO('mysql:host=localhost;dbname=facesym', 'root', '');
 session_start();
 
 if (isset ($_SESSION['username'])) {
@@ -130,12 +130,11 @@ if (isset ($_SESSION['username'])) {
                 </div>
                 <div class="panel-body">
                     <form id="register" method="post" action=register.php>
-                        <p><?php echo isset($_GET["msg"])?$_GET["msg"]:"";?></p>
                         <input name="username" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$"
-                               autofocus="autofocus" required="required" class="input pass"/>
-                        <input name="email" type="email" placeholder="Email address" class="input pass"/>
+                               autofocus="autofocus" required="required" class="input pass"/><?php if(isset($_SESSION['usernameError'])) { echo $_SESSION['usernameError']; } ?>
+                        <input name="email" type="email" placeholder="Email address" class="input pass"/> <?php if(isset($_SESSION['mailError'])) { echo $_SESSION['mailError']; } ?>
                         <input name="passwort" type="password" placeholder="Choose a password" required="required"
-                               class="input pass"/>
+                               class="input pass"/><?php if(isset($_SESSION['pwdError'])) { echo $_SESSION['pwdError']; } ?>
                         <input name="passwort2" type="password" placeholder="Confirm password" required="required"
                                class="input pass"/>
                         <div class="form-group">
@@ -147,13 +146,13 @@ if (isset ($_SESSION['username'])) {
                             $("#country").countrySelect();
                         </script>
                         <div class="form-group">
-                            <select class="input pass" id="sel1" required="required" name="sex">
+                            <select class="input pass" id="sel1" required="required" name="sex"><?php if(isset($_SESSION['sexError'])) { echo $_SESSION['sexError']; } ?>
                                 <option value="">Choose your sex</option>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select>
                         </div>
-                        <input name="age" type="number" placeholder="Current age" class="input pass"/>
+                        <input name="age" type="number" placeholder="Current age" class="input pass"/><?php if(isset($_SESSION['ageError'])) { echo $_SESSION['ageError']; } ?>
                         <input type="submit" value="Abschicken" class="inputButton"/>
 
                     </form>
