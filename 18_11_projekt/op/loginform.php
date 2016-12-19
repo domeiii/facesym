@@ -1,11 +1,38 @@
 <?php
+require_once 'inc/defines.inc.php';
+require_once 'inc/utilities.class.php';
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=facesym', 'facesym', 'vhzbYHE6#3F');
+$pdo = new PDO('mysql:host=' . DB_HOST .'; dbname=' .  DB_NAME , DB_USER, DB_PWD);
 $error_msg = "";
-if (isset($_POST['username']) && isset($_POST['username'])) {
-    $username = $_POST['username'];
-    $passwort = $_POST['passwort'];
+$errMsg = array();
 
+if (isset($_POST['username']) && isset($_POST['username'])) {
+    $tmpusername = Utilities::sanitizeFilter($_POST['username']);
+    $tmppwd = Utilities::sanitizeFilter($_POST['passwort']);
+   // $username = Utilities::sanitizeFilter($_POST['username']);
+   // $passwort = Utilities::sanitizeFilter($_POST['passwort']);
+    $username = 0;
+    $passwort = 0;
+    if (Utilities::isUser($tmpusername))
+    {
+        $username = $tmpusername;
+    }
+    else
+    {
+        $errMsg[$username] = "Please enter a valid username";
+    }
+
+    if (Utilities::isPassword($tmppwd))
+    {
+        $passwort = $tmppwd;
+    }
+    else
+    {
+        $errMsg[$passwort] = "Please enter a valid password";
+    }
+
+    if (!isset($errMsg[$username]) && !isset($errMsg[$passwort]))
+    {
     $statement = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $result = $statement->execute(array('username' => $username));
     $user = $statement->fetch();
@@ -28,9 +55,18 @@ if (isset($_POST['username']) && isset($_POST['username'])) {
         header("Location: ./profilepage.php");
         exit;
     } else {
-        header("Location: ./login.php?esg=Login failed");
+        $_SESSION['generalError'] = "User or password wrong.";
+        header("Location: ./login.php");
+        exit;
     }
-
+    }
+    else
+    {
+        $_SESSION['usernameErrorLogin'] = $errMsg[$username];
+        $_SESSION['pwdErrorLogin'] = $errMsg[$passwort];
+        header("Location: ./login.php");
+        exit;
+    }
 }
 
 $username_value = "";

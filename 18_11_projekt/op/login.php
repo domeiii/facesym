@@ -104,10 +104,12 @@ if (isset ($_SESSION['username'])) {
                 </div>
                 <div class="panel-body">
                     <form id="login" method="post" action="loginform.php">
-                        <p><?php echo isset($_GET["esg"])?$_GET["esg"]:"";?></p>
+                        <?php if(isset($_SESSION['generalError'])) { echo "<p>" . $_SESSION['generalError'] . "</p>"; unset($_SESSION['generalError']);} ?>
                         <input name="username" type="text" placeholder="Username" class="input pass" required="required" autofocus="autofocus"/>
+                        <?php if(isset($_SESSION['usernameErrorLogin'])) { echo "<p>" . $_SESSION['usernameErrorLogin'] . "</p>"; unset($_SESSION['usernameErrorLogin']);} ?>
                         <input name="passwort" type="password" placeholder="Password" required="required"
                                class="input pass" autofocus="autofocus"/>
+                        <?php if(isset( $_SESSION['pwdErrorLogin'])) { echo "<p>" .  $_SESSION['pwdErrorLogin'] . "</p>"; unset($_SESSION['pwdErrorLogin']);} ?>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" class="form-check-input" value="remember-me" name="angemeldet_bleiben" checked >
@@ -130,11 +132,12 @@ if (isset ($_SESSION['username'])) {
                 </div>
                 <div class="panel-body">
                     <form id="register" method="post" action=register.php>
+                        <?php if(isset($_SESSION[1])) { echo $_SESSION[1]; } ?>
                         <input name="username" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$"
-                               autofocus="autofocus" required="required" class="input pass"/><?php if(isset($_SESSION['usernameError'])) { echo $_SESSION['usernameError']; } ?>
-                        <input name="email" type="email" placeholder="Email address" class="input pass"/> <?php if(isset($_SESSION['mailError'])) { echo $_SESSION['mailError']; } ?>
+                               autofocus="autofocus" required="required" class="input pass"/><?php if(isset($_SESSION['usernameError'])) { echo "<p>" . $_SESSION['usernameError'] . "</p>"; unset($_SESSION['usernameError']);} ?>
+                        <input name="email" type="email" placeholder="Email address" class="input pass"/> <?php if(isset($_SESSION['mailError'])) { echo "<p>" . $_SESSION['mailError'] . "</p>"; unset($_SESSION['mailError']);} ?>
                         <input name="passwort" type="password" placeholder="Choose a password" required="required"
-                               class="input pass"/><?php if(isset($_SESSION['pwdError'])) { echo $_SESSION['pwdError']; } ?>
+                               class="input pass"/><?php if(isset($_SESSION['pwdError'])) { echo "<p>" .$_SESSION['pwdError'] . "</p>"; unset($_SESSION['pwdError']); } ?>
                         <input name="passwort2" type="password" placeholder="Confirm password" required="required"
                                class="input pass"/>
                         <div class="form-group">
@@ -146,13 +149,13 @@ if (isset ($_SESSION['username'])) {
                             $("#country").countrySelect();
                         </script>
                         <div class="form-group">
-                            <select class="input pass" id="sel1" required="required" name="sex"><?php if(isset($_SESSION['sexError'])) { echo $_SESSION['sexError']; } ?>
+                            <select class="input pass" id="sel1" required="required" name="sex"><?php if(isset( $_SESSION['sexError'])) { echo  "<p>" .$_SESSION['sexError'] . "</p>"; unset($_SESSION['sexError']);} ?>
                                 <option value="">Choose your sex</option>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select>
                         </div>
-                        <input name="age" type="number" placeholder="Current age" class="input pass"/><?php if(isset($_SESSION['ageError'])) { echo $_SESSION['ageError']; } ?>
+                        <input name="age" type="number" placeholder="Current age" class="input pass"/><?php if(isset( $_SESSION['ageError'])) { echo  "<p>" .$_SESSION['ageError'] . "</p>"; unset($_SESSION['ageError']);} ?>
                         <input type="submit" value="Abschicken" class="inputButton"/>
 
                     </form>

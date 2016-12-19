@@ -59,7 +59,7 @@ $con=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 
     if (!Utilities::isAge($age))
     {
-        $errMsg[$age] = "Please enter your age!";
+        $errMsg[$age] = "Please a valid age!";
     }
 
 
