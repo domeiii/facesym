@@ -42,7 +42,8 @@
  * Date: 17.11.2016
  * Time: 11:50
  */
-$m=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
+require_once 'inc/defines.inc.php';
+$m=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 
 session_start();
 $username = $_SESSION['username'];
@@ -55,7 +56,7 @@ WHERE  T1.id = T2.userid
 $result = mysqli_query($m,$query);
 
 if (!$result) {
-    $message  = 'Ungültige Abfrage: ' . mysqli_error($m) . "\n";
+    $message  = 'Ungï¿½ltige Abfrage: ' . mysqli_error($m) . "\n";
     $message .= 'Gesamte Abfrage: ' . $query;
     die($message);
 }
