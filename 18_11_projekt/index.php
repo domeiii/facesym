@@ -128,32 +128,48 @@
 
 
     <script language="javascript" type="text/javascript">
-        function UpdateRightQuestion() {
-            document.getElementById("ir").style.visibility ="visible";
-            setTimeout(function() {
-                document.getElementById("ir").style.visibility ="hidden";
-                $.ajax({url: "/op/updateRQ.php", async: false});
-                $.ajax({url: "/op/updatePic.php", async: false});
+
+    var value = 1;
+
+    function UpdateRightQuestion() {
+        if (value ==1) {
+            value = 2;
+            document.getElementById("ir").style.visibility = "visible";
+
+            setTimeout(function () {
+                document.getElementById("ir").style.visibility = "hidden";
+
+                $.ajax({url: "updateRQ.php", async: false});
+                $.ajax({url: "updatePic.php", async: false});
                 //$("#gameupdate").load(location.href + " #gameupdate");
                 window.location.reload();
             }, 1000);
         }
-        function UpdateWrongQuestion(){
-            document.getElementById("iw").style.visibility ="visible";
-            setTimeout(function() {
-                document.getElementById("iw").style.visibility ="hidden";
-                $.ajax({url: "/op/updateWQ.php", async: false});
-                $.ajax({url: "/op/updatePic.php", async: false});
+    }
+
+    function UpdateWrongQuestion(){
+        if (value ==1) {
+            value = 2;
+            document.getElementById("iw").style.visibility = "visible";
+
+            setTimeout(function () {
+                document.getElementById("iw").style.visibility = "hidden";
+
+                $.ajax({url: "updateWQ.php", async: false});
+                $.ajax({url: "updatePic.php", async: false});
                 //$("#gameupdate").load(location.href + " #gameupdate");
                 window.location.reload();
             }, 1000);
         }
-        function SetPicture(){
-            $.ajax({url: "/op/setnewPic.php", async: false});
-            //$("#gameupdate").load(location.href + " #gameupdate");
-            window.location.reload();
-        }
-    </script>
+    }
+
+    function SetPicture(){
+        $.ajax({url: "setnewPic.php", async: false});
+        //$("#gameupdate").load(location.href + " #gameupdate");
+        window.location.reload();
+    }
+
+</script>
     <br><br><br><br>
     <div class="alert alert-success" id="ir">
         <strong>Right!</strong>
