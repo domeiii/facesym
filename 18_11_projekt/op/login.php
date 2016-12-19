@@ -85,7 +85,8 @@
     </div>
 </nav>
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=facesym', 'root', '');
+require_once 'inc/defines.inc.php';
+$pdo = new PDO('mysql:host=' . DB_HOST .'; dbname=' .  DB_NAME , DB_USER, DB_PWD);
 session_start();
 
 if (isset ($_SESSION['username'])) {
