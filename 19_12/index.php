@@ -22,62 +22,25 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style_index.css">
 
 </head>
-<style>
-    .imager:hover {
-        -moz-box-shadow: 0 0 10px #0aa699;
-        -webkit-box-shadow: 0 0 10px #0aa699;
-        box-shadow: 0 0 10px #0aa699;
-    }
-    .imagew:hover {
-        -moz-box-shadow: 0 0 10px #0aa699;
-        -webkit-box-shadow: 0 0 10px #0aa699;
-        box-shadow: 0 0 10px #0aa699;
-    }
-
-    /*
-    .imager:active {
-        -moz-box-shadow: 0 0 150px #228B22;
-        -webkit-box-shadow: 0 0 150px #228B22;
-        box-shadow: 0 0 150px#228B22;
-    }
-
-    .imagew:active {
-        -moz-box-shadow: 0 0 150px #ba0000;
-        -webkit-box-shadow: 0 0 150px #ba0000;
-        box-shadow: 0 0 150px#ba0000;
-    }*/
-
-    #ir {
-        visibility: hidden;
-    }
-
-    #iw {
-        visibility: hidden;
-    }
-
-
-    #gameupdate{
-        margin-top: -10%;
-    }
-</style>
 
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-default">
-    <a href="facesym.html"><img src="images/logo.png" alt="FaceSym Logo" id="beginning" width="224" height="64"></a>
+    <a href="/op/facesym.html"><img src="images/logo.png" alt="FaceSym Logo" id="beginning" width="224" height="64"></a>
 
     <div class="container">
 
         <div class="navbar-header">
             <ul class="nav navbar-nav navbar-left">
 
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a></a></li>
-                <li><a href="info.html">Info</a></li>
+                <li><a href="/op/info.html">Info</a></li>
             </ul>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -86,11 +49,6 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <!--<a class="navbar-brand" href="index.html">Home</a>
-            <a class="navbar-brand" href="info.html">Info</a>-->
-
-
-
         </div>
 
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -98,9 +56,9 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="login.html">Login</a></li>
+                <li><a href="/op/login.php">Login</a></li>
                 <li><a></a></li>
-                <li><a href="profile.html">Profile</a></li>
+                <li><a href="/op/profilepage.php">Profile</a></li>
             </ul>
         </div>
     </div>
@@ -109,16 +67,22 @@
 
 <!-- First Container -->
 <div id ="gameupdate" class="container-fluid bg-1 text-center">
-    <h3 class="margin">Which one is the original face?</h3>
+
+    <?php session_start();
+    if (isset ($_SESSION['username'])) {
+    ?> <h3 class="margin">Which one is the original face?</h3> <?php
+    }
+    ?>
+
 
     <?php
     session_start();
-    $_SESSION['userid'] = 1;
-
-    
-
+    if (!isset($_SESSION['username'])){
+        ?> <h3> Please <a href="./op/login.php">login </a> to play the game! </h3>
+    <?php }
+    else {
         //if game is on and he decided between 10 pictures
-        if (isset($_SESSION['games']) && $_SESSION['games'] >= 10) {
+        if (isset($_SESSION['games']) && $_SESSION['games'] >= 10){
             echo "Spiel beendet";
             echo "Richtige";
             echo $_SESSION['right'];
@@ -126,29 +90,28 @@
             echo $_SESSION['wrong']; ?>
 
             <script language="javascript" type="text/javascript">
-                $.ajax({url: "updateGames.php", async: false});
+                $.ajax({url: "/op/updateGames.php", async: false});
+                // window.location.reload();
             </script>
 
             <?php
-
             echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Erneut spielen</button>";
-        } // else if no game is in process
+        }
+// else if no game is in process
         else {
             //if no picture is set he can start the game
-            if (!isset($_SESSION["pictur"])) {
+            if (!isset($_SESSION['pictur'])) {
                 echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Spiel starten</button>";
-
                 //else if picture is set/game is on show pictures
             } else {
                 //show right picture on the left
                 if ($_SESSION['random'] === 1) {
-                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">";
+                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
                     echo "&nbsp;";
                     echo "&nbsp;";
                     echo "&nbsp;";
                     echo "&nbsp;";
                     echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateWrongQuestion()\" style=\"transform:scaleX(-1)\" class=\"imagew\">";
-
                     //show right picture on the right
                 } else {
                     echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateWrongQuestion()\" style=\"transform:scaleX(-1)\" class=\"imagew\">";
@@ -156,28 +119,22 @@
                     echo "&nbsp;";
                     echo "&nbsp;";
                     echo "&nbsp;";
-                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">";
-
-
+                    echo "<img src='" . $_SESSION['pictur'] . "'/ width=\"250\" height=\"200\" onClick=\"UpdateRightQuestion()\" class=\"imager\">" ;
                 }
             }
-
+        }
     }
     ?>
 
 
-<script language="javascript" type="text/javascript">
-
+    <script language="javascript" type="text/javascript">
     var value = 1;
-
     function UpdateRightQuestion() {
         if (value ==1) {
             value = 2;
             document.getElementById("ir").style.visibility = "visible";
-
             setTimeout(function () {
                 document.getElementById("ir").style.visibility = "hidden";
-
                 $.ajax({url: "updateRQ.php", async: false});
                 $.ajax({url: "updatePic.php", async: false});
                 //$("#gameupdate").load(location.href + " #gameupdate");
@@ -185,15 +142,12 @@
             }, 1000);
         }
     }
-
     function UpdateWrongQuestion(){
         if (value ==1) {
             value = 2;
             document.getElementById("iw").style.visibility = "visible";
-
             setTimeout(function () {
                 document.getElementById("iw").style.visibility = "hidden";
-
                 $.ajax({url: "updateWQ.php", async: false});
                 $.ajax({url: "updatePic.php", async: false});
                 //$("#gameupdate").load(location.href + " #gameupdate");
@@ -201,13 +155,11 @@
             }, 1000);
         }
     }
-
     function SetPicture(){
         $.ajax({url: "setnewPic.php", async: false});
         //$("#gameupdate").load(location.href + " #gameupdate");
         window.location.reload();
     }
-
 </script>
     <br><br><br><br>
     <div class="alert alert-success" id="ir">
@@ -221,26 +173,6 @@
 
 
 </div>
-
-
-
-
-<nav>
-    <div><h1><strong>FaceSym</strong></h1></div>
-    <div class="clear"></div>
-    <hr>
-    <ul>
-        <li><h2><em>Allgemein</em></h2></li>
-    </ul>
-</nav>
-<main>
-    <div>
-        <article id="black">Willkommen auf der FaceSym Website.</article>
-    </div>
-    <div><p>Bitte logg' Dich ein um fortzufahren.</p>
-    </div>
-
-</main>
 
 <!-- Footer -->
 <footer class="text-center">
