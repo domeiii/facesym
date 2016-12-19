@@ -67,22 +67,16 @@
 
 <!-- First Container -->
 <div id ="gameupdate" class="container-fluid bg-1 text-center">
-
-    <?php session_start();
-    if (isset ($_SESSION['username'])) {
-    ?> <h3 class="margin">Which one is the original face?</h3> <?php
-    }
-    ?>
-
+    <h3 class="margin">Which one is the original face?</h3>
 
     <?php
     session_start();
     if (!isset($_SESSION['username'])){
-        ?> <h3> Please <a href="./op/login.php">login </a> to play the game! </h3>
-    <?php }
+        echo "Please Login to play the game";
+    }
     else {
         //if game is on and he decided between 10 pictures
-        if (isset($_SESSION['games']) && $_SESSION['games'] >= 10){
+        if (isset($_SESSION['games']) && $_SESSION['games'] === 10){
             echo "Spiel beendet";
             echo "Richtige";
             echo $_SESSION['right'];
@@ -128,48 +122,32 @@
 
 
     <script language="javascript" type="text/javascript">
-
-    var value = 1;
-
-    function UpdateRightQuestion() {
-        if (value ==1) {
-            value = 2;
-            document.getElementById("ir").style.visibility = "visible";
-
-            setTimeout(function () {
-                document.getElementById("ir").style.visibility = "hidden";
-
-                $.ajax({url: "updateRQ.php", async: false});
-                $.ajax({url: "updatePic.php", async: false});
+        function UpdateRightQuestion() {
+            document.getElementById("ir").style.visibility ="visible";
+            setTimeout(function() {
+                document.getElementById("ir").style.visibility ="hidden";
+                $.ajax({url: "/op/updateRQ.php", async: false});
+                $.ajax({url: "/op/updatePic.php", async: false});
                 //$("#gameupdate").load(location.href + " #gameupdate");
                 window.location.reload();
             }, 1000);
         }
-    }
-
-    function UpdateWrongQuestion(){
-        if (value ==1) {
-            value = 2;
-            document.getElementById("iw").style.visibility = "visible";
-
-            setTimeout(function () {
-                document.getElementById("iw").style.visibility = "hidden";
-
-                $.ajax({url: "updateWQ.php", async: false});
-                $.ajax({url: "updatePic.php", async: false});
+        function UpdateWrongQuestion(){
+            document.getElementById("iw").style.visibility ="visible";
+            setTimeout(function() {
+                document.getElementById("iw").style.visibility ="hidden";
+                $.ajax({url: "/op/updateWQ.php", async: false});
+                $.ajax({url: "/op/updatePic.php", async: false});
                 //$("#gameupdate").load(location.href + " #gameupdate");
                 window.location.reload();
             }, 1000);
         }
-    }
-
-    function SetPicture(){
-        $.ajax({url: "setnewPic.php", async: false});
-        //$("#gameupdate").load(location.href + " #gameupdate");
-        window.location.reload();
-    }
-
-</script>
+        function SetPicture(){
+            $.ajax({url: "/op/setnewPic.php", async: false});
+            //$("#gameupdate").load(location.href + " #gameupdate");
+            window.location.reload();
+        }
+    </script>
     <br><br><br><br>
     <div class="alert alert-success" id="ir">
         <strong>Right!</strong>
@@ -189,7 +167,19 @@
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a><br><br>
     <p><a href="mailto:S1510238016@students.fh-hagenberg.at?subject=Feedback%20FaceSym&amp;body=Liebes%20Pro3-Team,"><address>Wishes, suggestions, complaints,...?!</address></a> <br>
-        <br><address><a id="autor">© Julia Flath, Dominik Kolberger, Matthias Roiss, Belinda Thaler</a><br></address>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="fb-like" data-href="http://face-sym.projekte.fh-hagenberg.at/index.php" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+
+        <br><address><a id="autor">� Julia Flath, Dominik Kolberger, Matthias Roiss, Belinda Thaler</a><br></address>
     </p>
 </footer>
 
