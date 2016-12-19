@@ -18,10 +18,12 @@ class Utilities
     }
 
     public static function isAge($string) {
-        $int_pattern = "/(^[1-9]\d*$|0)/";
-        if (!preg_match($int_pattern, $string) && $string > 112 && $string < 10 || $string == 0) {
+        if (!is_numeric($string)) {
             return false;
-        } else {
+        } else if (is_numeric($string) && ($string >= "80" || $string <= "13" || $string === "0")){
+            return false;
+        }  else if (is_numeric($string) && $string >= "14" && $string <= "79" && $string !== "0")
+        {
             return true;
         }
     }
