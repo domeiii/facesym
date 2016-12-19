@@ -36,8 +36,8 @@
 
 
 <?php
-
-$m=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
+require_once 'inc/defines.inc.php';
+$m=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 session_start();
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];
