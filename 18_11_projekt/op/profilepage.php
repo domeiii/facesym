@@ -99,12 +99,12 @@
 </script>
 <body>
 <?php
-
+require_once 'inc/defines.inc.php';
 if(!isset ($_SESSION['username'])){
     header("Location: ./login.php");
 }
 
-$con=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
+$con=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];#
 $query = sprintf("SELECT * FROM users
