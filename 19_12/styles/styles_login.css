@@ -1,0 +1,90 @@
+
+        ::selection {
+            background-color: #b2b2b2;
+        }
+
+        ::-moz-selection {
+            background-color: #b2b2b2;
+        }
+
+        .input {
+            width: 75%;
+            height: 50px;
+            display: block;
+            margin: 0 auto 15px;
+            padding: 0 15px;
+            border: none;
+            border-bottom: 2px solid #ebebeb;
+        }
+        .select {
+            width: 75%;
+            height: 50px;
+            display: block;
+            margin: 0 auto 15px;
+            padding: 0 15px;
+            border: none;
+            border-bottom: 2px solid #ebebeb;
+        }
+        .input:focus {
+            outline: none;
+            border-bottom-color: #6d6d6d !important;
+        }
+        .select:focus {
+            outline: none;
+            border-bottom-color: #6d6d6d !important;
+        }
+
+        .input:hover {
+            border-bottom-color: #dcdcdc;
+        }
+        .select:hover {
+            border-bottom-color: #dcdcdc;
+        }
+
+        .input:invalid {
+            box-shadow: none;
+        }
+        .select:invalid {
+            box-shadow: none;
+        }
+
+        .pass:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset;
+        }
+
+        .inputButton {
+            position: relative;
+            width: 85%;
+            height: 50px;
+            display: block;
+            margin: 30px auto 30px;
+            color: white;
+            background-color: #6d6d6d;
+            border: none;
+            -webkit-box-shadow: 0 5px 0 #4c4c4c;
+            -moz-box-shadow: 0 5px 0 #4c4c4c;
+            box-shadow: 0 5px 0 #4c4c4c;
+        }
+
+        .inputButton:hover {
+            top: 2px;
+            -webkit-box-shadow: 0 3px 0 #4c4c4c;
+            -moz-box-shadow: 0 3px 0 #4c4c4c;
+            box-shadow: 0 3px 0 #4c4c4c;
+        }
+
+        .inputButton:active {
+            top: 5px;
+            box-shadow: none;
+        }
+
+        .inputButton:focus {
+            outline: none;
+        }
+        .h2register {
+            text-align: left;
+        }
+        .panel-heading {
+            padding: 5px;
+        }
+ 

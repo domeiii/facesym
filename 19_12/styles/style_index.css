@@ -1,0 +1,32 @@
+
+    .imager:hover {
+        -moz-box-shadow: 0 0 10px #0aa699;
+        -webkit-box-shadow: 0 0 10px #0aa699;
+        box-shadow: 0 0 10px #0aa699;
+    }
+    .imagew:hover {
+        -moz-box-shadow: 0 0 10px #0aa699;
+        -webkit-box-shadow: 0 0 10px #0aa699;
+        box-shadow: 0 0 10px #0aa699;
+    }
+    /*
+    .imager:active {
+        -moz-box-shadow: 0 0 150px #228B22;
+        -webkit-box-shadow: 0 0 150px #228B22;
+        box-shadow: 0 0 150px#228B22;
+    }
+    .imagew:active {
+        -moz-box-shadow: 0 0 150px #ba0000;
+        -webkit-box-shadow: 0 0 150px #ba0000;
+        box-shadow: 0 0 150px#ba0000;
+    }*/
+    #ir {
+        visibility: hidden;
+    }
+    #iw {
+        visibility: hidden;
+    }
+    #gameupdate{
+        margin-top: -10%;
+    }
+
