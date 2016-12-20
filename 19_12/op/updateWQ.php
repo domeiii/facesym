@@ -5,6 +5,39 @@ $conn = mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 $_SESSION["wrong"] += 1;
 $user = $_SESSION['userid'];
 $pic = $_SESSION['picid'];
+
+
+if ($_SESSION['one'] == 0 && $_SESSION['games'] == 0){
+    $_SESSION['one'] = 2;
+}
+if ($_SESSION['two'] == 0 && $_SESSION['games'] == 1){
+    $_SESSION['two'] = 2;
+}
+if ($_SESSION['three'] == 0 && $_SESSION['games'] == 2){
+    $_SESSION['three'] = 2;
+}
+if ($_SESSION['four'] == 0 && $_SESSION['games'] == 3){
+    $_SESSION['four'] = 2;
+}
+if ($_SESSION['five'] == 0 && $_SESSION['games'] == 4){
+    $_SESSION['five'] = 2;
+}
+if ($_SESSION['six'] == 0 && $_SESSION['games'] == 5){
+    $_SESSION['six'] = 2;
+}
+if ($_SESSION['seven'] == 0 && $_SESSION['games'] == 6){
+    $_SESSION['seven'] = 2;
+}
+if ($_SESSION['eight'] == 0 && $_SESSION['games'] == 7){
+    $_SESSION['eight'] = 2;
+}
+if ($_SESSION['nine'] == 0 && $_SESSION['games'] == 8){
+    $_SESSION['nine'] = 2;
+}
+if ($_SESSION['ten'] == 0 && $_SESSION['games'] == 9){
+    $_SESSION['ten'] = 2;
+}
+
 //Update pic wrong
 $updatePic = "UPDATE images SET wrong_answered= wrong_answered+1 WHERE idimages=$pic";
 mysqli_query($conn, $updatePic);
