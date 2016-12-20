@@ -20,6 +20,18 @@ $getGenderP = "SELECT gender FROM images WHERE idimages=$random";
 $genderHP = mysqli_query($conn, $getGenderP);
 $genderP = mysqli_fetch_row($genderHP);
 $rand = rand(1,2);
+
+$_SESSION["one"] = 0;
+$_SESSION["two"] = 0;
+$_SESSION["three"] = 0;
+$_SESSION["four"] = 0;
+$_SESSION["five"] = 0;
+$_SESSION["six"] = 0;
+$_SESSION["seven"] = 0;
+$_SESSION["eight"] = 0;
+$_SESSION["nine"] = 0;
+$_SESSION["ten"] = 0;
+
 $_SESSION["right"] = 0;
 $_SESSION["wrong"] = 0;
 $_SESSION["random"] = $rand;
