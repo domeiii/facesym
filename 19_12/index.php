@@ -170,6 +170,19 @@
     <div class="alert alert-danger" id="iw">
         <strong>Wrong!</strong>
     </div>
+    
+    <div class="container">
+        <div class="item <?php if ($_SESSION['one'] == 1) { echo "right"; } else if($_SESSION['one'] == 2) { echo "wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['two'] == 1) { echo "right"; } else if($_SESSION['two'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['three'] == 1) { echo " right"; } else if($_SESSION['three'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['four'] == 1) { echo " right"; } else if($_SESSION['four'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['five'] == 1) { echo " right"; } else if($_SESSION['five'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['six'] == 1) { echo " right"; } else if($_SESSION['six'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['seven'] == 1) { echo " right"; } else if($_SESSION['seven'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['eight'] == 1) { echo " right"; } else if($_SESSION['eight'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['nine'] == 1) { echo " right"; } else if($_SESSION['nine'] == 2) { echo " wrong"; }?>"></div>
+        <div class="item <?php if ($_SESSION['ten'] == 1) { echo " right"; } else if($_SESSION['ten'] == 2) { echo " wrong"; }?>"></div>
+    </div>
 
 
 </div>
