@@ -1,0 +1,284 @@
+header{
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+
+}
+
+#googleMap {
+    width: 100%; /* Span the entire width of the screen */
+    height: 500px; /* Set the height to 400 pixels */
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); /* Change the color of the map to black and white */
+}
+
+li{
+    margin-bottom: 1%;
+}
+
+
+body {
+    font: 20px Open Sans, Arial, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+}
+p {font-size: 16px;}
+.margin {margin-bottom: 45px;}
+.bg-1 {
+    background-color: white;
+    color: black;
+}
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+.bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
+}
+.bg-4 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+.container-fluid {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-top: -5%;
+}
+
+.source{
+    font-size: 10pt !important;
+}
+
+#particles{height:250px}
+
+
+.navbar {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+#googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.navbar-left {
+    position: relative;
+}
+
+
+
+/*
+ul > a {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}*/
+
+
+div > input{
+    float: right;
+}
+h1 {
+    color: black;
+    font-family: 'Open Sans',arial, helvetica, sans-serif;
+    text-align: center;
+}
+h2 {
+    color: black;
+    font-family: 'Open Sans',arial, helvetica, sans-serif;
+}
+h3 {
+    color: black;
+    font-family: 'Open Sans',arial, helvetica, sans-serif;
+}
+
+p {
+    color: black;
+    word-wrap: break-word;
+}
+
+
+hr {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #fff;
+}
+
+body {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    color: black;
+    margin: 0 auto;
+    text-align: center;
+}
+
+address {
+    font-style: normal;
+    font-size: 14px;
+}
+
+em {
+    font-style: italic;
+    color: black;
+}
+
+strong {
+    font-style: oblique;
+    color: black;
+}
+
+ul {
+    list-style-type: square;
+    margin-right: 40px;
+}
+
+a:link {
+    color: black;
+    font-size: 24px;
+}
+a:visited {
+    color: #028b9f;
+}
+
+a:hover {
+    color: #028e9f;
+    text-decoration: none;
+    transition: all 0.25s ease-in;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+
+
+#small {
+    font-size: 12px !important;
+    float: right;
+    margin-right: 0px;
+}
+
+#black {
+    color: black;
+}
+
+h2 > p {
+    font-style: italic;
+}
+
+h3 em {
+    text-decoration: underline;
+}
+
+
+#col1 {
+    width: 130px;
+    text-align: left;
+}
+
+
+img {
+    position: center;
+    margin-top: 0.5%;
+    margin-bottom: -3.5%;
+
+}
+
+#left {
+    float: left;
+    margin-left: 10px;
+}
+
+#bottom {
+    margin-top: 170px
+}
+
+#bottom2 {
+    margin-top: 200px;
+}
+
+
+label {
+    float: left;
+    clear: left;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+input {
+    float: left;
+}
+
+button {
+    float: left;
+    margin-top: 140px;
+}
+
+textarea {
+    float: left;
+}
+
+/*tr:nth-child(2n) {
+    background-color: gray;
+}*/
+
+#box {
+    width: 210px;
+    height: 180px;
+    background-color: red;
+    border-radius: 20px;
+    position: absolute;
+    left: 1000px;
+    bottom: 350px;
+    box-shadow: rgba(0, 0, 0, 0.3) 15px 15px 10px;
+    transform: rotate(15deg);
+    opacity: 0.6;
+}
+
+
+main {
+    min-height: 200px;
+    margin: 0;
+    padding: 0;
+    -webkit-display: flex;
+    -ms-display: flex;
+    flex-flow: row;
+}
+
+main > article {
+    flex: 1 1 50%;
+    -webkit-order: 1;
+    -ms-order: 1;
+    color: black;
+}
+
+main > div {
+    flex: 1 1 50%;
+    -webkit-order: 2;
+    -ms-order: 2;
+}
+
+#images{
+    margin-bottom: -8%;
+}
+/***********************
+********* Footer ******
+************************/
+footer {
+    background-color: lightgray;
+    border-radius: 20px;
+}

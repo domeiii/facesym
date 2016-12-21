@@ -1,0 +1,1 @@
+$m=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
