@@ -119,7 +119,7 @@ if (isset ($_SESSION['username'])) {
                                 Stay logged in
                             </label>
                         </div>
-                        <input type="submit" value="Einloggen!" class="inputButton"/>
+                        <input type="submit" value="Log in" class="inputButton"/>
                     </form>
                 </div>
             </div>
@@ -159,7 +159,7 @@ if (isset ($_SESSION['username'])) {
                             </select>
                         </div>
                         <input name="age" type="number" placeholder="Current age [14-80]" class="input pass"/><?php if(isset( $_SESSION['ageError'])) { echo  "<p>" .$_SESSION['ageError'] . "</p>"; unset($_SESSION['ageError']);} ?>
-                        <input type="submit" value="Abschicken" class="inputButton"/>
+                        <input type="submit" value="Register" class="inputButton"/>
 
                     </form>
                 </div>
