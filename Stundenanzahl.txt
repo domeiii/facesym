@@ -26,3 +26,4 @@ Domi    Spiel/Bildstatistik einzeln                  13.12.16      2h
 Roiss   Register/Sicherheit                          18.12.16      2,5h 
 Domi    Bugfix only right or wrong click             19.12.16      2h              
 Roiss   Implementierung                              19.12.16      2h
+Domi    Statusleiste Spiel, Datenbank                20.12.16      2h   
