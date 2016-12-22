@@ -42,7 +42,8 @@
  * Date: 17.11.2016
  * Time: 11:50
  */
-$m=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
+require_once 'inc/defines.inc.php';
+$m=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 
 session_start();
 $username = $_SESSION['username'];
@@ -55,7 +56,7 @@ WHERE  T1.id = T2.usersid
 $result = mysqli_query($m,$query);
 
 if (!$result) {
-    $message  = 'Ungültige Abfrage: ' . mysqli_error($m) . "\n";
+    $message  = 'Ungï¿½ltige Abfrage: ' . mysqli_error($m) . "\n";
     $message .= 'Gesamte Abfrage: ' . $query;
     die($message);
 }
@@ -96,6 +97,20 @@ $diff = 19-$x;
 
 mysqli_free_result($result);
 
+
+    $my=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
+    $query1 = sprintf("SELECT points FROM user_stat
+    WHERE usersid='%s'", mysqli_real_escape_string($my,$userid));
+    $result1 = mysqli_query($my,$query1);
+    if (!$result1) {
+        $message  = 'Ung?ltige Abfrage: ' . mysqli_error($my) . "\n";
+        $message .= 'Gesamte Abfrage: ' . $query1;
+        die($message);
+    }
+    while ($row = mysqli_fetch_assoc($result1)) {
+        $points = $row['points'];
+    }
+    mysqli_free_result($result1);
 
 
 echo '<div class="container">
@@ -172,7 +187,7 @@ echo '<div class="container">
                                     <tr>'; if ($dru!=true) { echo '
                                     <td>...</td>
                                     <td>';echo $_SESSION['username']; echo '</td>
-                                    <td>';echo "hi"; echo '</td>
+                                    <td>';echo $points; echo '</td>
                                     </tr>';} ?>
 
                                 </table>
