@@ -74,7 +74,6 @@
     }
     ?>
 
-
     <?php
     session_start();
     if (!isset($_SESSION['username'])){
@@ -88,9 +87,11 @@
          echo " questions right and ";
          echo $_SESSION['wrong'];
          echo " questions wrong!"; ?>*/
+
+
     if (isset($_SESSION['games']) && $_SESSION['games'] >= 10){
     ?> <div>Game finished:
-        <?php echo '<span style = "font-weight:bold ; color:green;">'. $_SESSION['right'].'</span>';
+        <?php echo '<span style = "font-weight:bold ; color:#0aa699;">' . $_SESSION['right'].'</span>';
         ?>  questions right and
         <?php echo '<span style = "font-weight:bold; color:darkred;">'. $_SESSION['wrong'].'</span>';
         ?> questions wrong!</div>
@@ -98,14 +99,23 @@
             $.ajax({url: "/op/updateGames.php", async: false});
             // window.location.reload();
         </script>
+        <div class="col-md-6"></div>
 
         <?php
-        echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Replay</button>";
+
+        echo "<button align='center' id= start type=\"button\" onClick=\"SetPicture()\">Replay</button>";
     }
+
 // else if no game is in process
     else {
-        //if no picture is set he can start the game
+?>
+
+<?php
+    //if no picture is set he can start the game
         if (!isset($_SESSION['pictur'])) {
+           ?>
+    <div class="col-md-6"></div>
+<?php
             echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Start game</button>";
             //else if picture is set/game is on show pictures
         } else {
