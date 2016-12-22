@@ -33,7 +33,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-default">
-        <a href="/index.php"><img src="/images/logo.png" alt="FaceSym Logo" id="beginning" width="224" height="64"></a>
+        <a href="facesym.html"><img src="/images/logo.png" alt="FaceSym Logo" id="beginning" width="224" height="64"></a>
 
         <div class="container">
 
@@ -99,12 +99,12 @@
 </script>
 <body>
 <?php
-
+require_once 'inc/defines.inc.php';
 if(!isset ($_SESSION['username'])){
     header("Location: ./login.php");
 }
 
-$con=mysqli_connect("localhost","facesym","vhzbYHE6#3F","facesym");
+$con=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
 $username = $_SESSION['username'];
 $userid = $_SESSION['userid'];#
 $query = sprintf("SELECT * FROM users
@@ -151,13 +151,18 @@ Licensed under MIT
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="/images/profilepicture.jpg" alt="FaceSym Logo" width="1024" height="1024">
+                   <?php if($sex=='male') {?> <img src="/images/profilepicture.jpg" alt="FaceSym Logo" width="1024" height="1024">
+                   <?php } else { ?>
+                       <img src="/images/profilepicture_w.jpg" alt="FaceSym Logo" width="1024" height="1024">
+                    <?php } ?>
+
+
                 </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        <?php echo $_SESSION['username'] ?>
+                      <?php echo "<a href=profilepage.php>".  $_SESSION['username']." </a>" ?>
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
