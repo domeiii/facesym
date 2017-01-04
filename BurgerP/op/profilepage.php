@@ -199,7 +199,7 @@ Licensed under MIT
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8">
-                            <h3>Herzlich Willkommen auf Deiner Profilseite</h3>
+                            <h3>Welcome to your profile page!</h3>
                             <br>
                         </div>
                     </div>
@@ -289,3 +289,4 @@ Licensed under MIT
 </script>
 </header>
 </html>
+
