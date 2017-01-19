@@ -243,7 +243,7 @@
         }(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="fb-like" data-href="http://face-sym.projekte.fh-hagenberg.at/index.php" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-
+<br>
     <br><address><a id="autor">© Julia Flath, Dominik Kolberger, Matthias Roiss, Belinda Thaler</a><br></address>
     </p>
 </footer>
