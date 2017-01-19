@@ -77,7 +77,15 @@
     <?php
     session_start();
     if (!isset($_SESSION['username'])){
-        ?> <h3> Please <a href="./op/login.php">login </a> to play the game! </h3>
+        ?>
+        <br>
+        <h2>Welcome to FaceSym!</h2>
+        <br>
+        <a href="./op/login.php"><img src="images/key.jpg" alt="Key Icon" id="beginning" width="100" height="75"></a>
+        <br>
+        <br>
+        <h3> Please <a href="./op/login.php">login </a> to play the game! </h3>
+        <hr>
     <?php }
     else {
     //if game is on and he decided between 10 pictures
@@ -91,19 +99,29 @@
 
     if (isset($_SESSION['games']) && $_SESSION['games'] >= 10){
     ?> <div>Game finished:
-        <?php echo '<span style = "font-weight:bold ; color:#0aa699;">' . $_SESSION['right'].'</span>';
+        <?php echo '<span style = "font-weight:bold ; color:green;">' . $_SESSION['right'].'</span>';
         ?>  questions right and
         <?php echo '<span style = "font-weight:bold; color:darkred;">'. $_SESSION['wrong'].'</span>';
         ?> questions wrong!</div>
+		<?php
+		if ($_SESSION['updat'] == 0){?>
         <script language="javascript" type="text/javascript">
             $.ajax({url: "/op/updateGames.php", async: false});
             // window.location.reload();
         </script>
-        <div class="col-md-6"></div>
+		<?php }
+		?>
+        <style>
+            button {
+                margin-top: 90px; !important;
+                text-align: center; !important;
+                float: none;!important;
+            }
+        </style>
 
         <?php
 
-        echo "<button align='center' id= start type=\"button\" onClick=\"SetPicture()\">Replay</button>";
+        echo "<button align='center' id= start type=\"button\" onClick=\"SetPicture()\" class=\"btn btn-primary btn-circle\">Replay</button>";
     }
 
 // else if no game is in process
@@ -114,9 +132,15 @@
     //if no picture is set he can start the game
         if (!isset($_SESSION['pictur'])) {
            ?>
-    <div class="col-md-6"></div>
+        <style>
+            button {
+                margin-top: 90px; !important;
+                text-align: center; !important;
+                float: none;!important;
+            }
+        </style>
 <?php
-            echo "<button id= start type=\"button\" onClick=\"SetPicture()\">Start game</button>";
+            echo "<button id= start type=\"button\" onClick=\"SetPicture()\"class=\"btn btn-primary btn-circle\">Start game</button>";
             //else if picture is set/game is on show pictures
         } else {
             //show right picture on the left
