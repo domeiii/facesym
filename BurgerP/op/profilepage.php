@@ -33,7 +33,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-default">
-        <a href="facesym.html"><img src="/images/logo.png" alt="FaceSym Logo" id="beginning" width="224" height="64"></a>
+        <a href="/index.php"><img src="/images/logo.png" alt="FaceSym Logo" id="beginning" width="224" height="64"></a>
 
         <div class="container">
 
@@ -132,10 +132,10 @@ if (!$result2) {
     die($message);
 }
 while ($row2 = mysqli_fetch_assoc($result2)) {
-    $totalgames = $row2['questions_answered']/10;
-    $totalgames=$totalgames%10;
+    $totalgames = $row2['games_p'];
 }
 mysqli_free_result($result2);
+
 ?>
 
 <!-- First Container -->
@@ -183,12 +183,12 @@ Licensed under MIT
                             <a href="Achievements.php" id="click3">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Achievements </a>
-                        </li>
-                        <li>
+                        </li> 
+                        <!--<li>
                             <a href="settings.php" id="click4">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Settings </a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
                 <!-- END MENU -->
@@ -236,8 +236,24 @@ Licensed under MIT
     </a><br><br>
     <p><a href="mailto:S1510238016@students.fh-hagenberg.at?subject=Feedback%20FaceSym&amp;body=Liebes%20Pro3-Team,">
             <address>Wishes, suggestions, complaints,...?!</address>
-        </a> <br>
-        <br>
+        </a>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+<br>
+    <style>
+        .fb-like{
+            float: none;!important;
+        }
+    </style>
+    <div class="fb-like" data-href="http://face-sym.projekte.fh-hagenberg.at/index.php" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+
+    <br><br>
     <address><a id="autor">© Julia Flath, Dominik Kolberger, Matthias Roiss, Belinda Thaler</a><br></address>
     </p>
 </footer>
@@ -289,4 +305,3 @@ Licensed under MIT
 </script>
 </header>
 </html>
-
