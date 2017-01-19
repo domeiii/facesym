@@ -63,13 +63,22 @@
 </head>
 
 <body>
+
 <div class="container">
     <div class="col-md-9" id="div1">
         <div class="profile-content">
             <div class="container">
                 <div class="row">
+                    <style>
+                        button {
+                            margin-top: 20px; !important;
+                        }
+                    </style>
+                   <a href="profilepage.php"><button type="button" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-menu-left"></i></button>
+                   </a>
                     <div class="col-md-4">
-                        <h3>Skills</h3>
+
+                        <h3>Score</h3>
                         <br>
                         <div class="col-md-11">
                             <p><strong>Correct answers:</strong>    <?php echo round($percentage_total, 1) ."%" ?></p>

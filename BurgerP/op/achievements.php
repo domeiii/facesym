@@ -74,41 +74,34 @@ echo '<div class="container">
         <div class="profile-content">
             <div class="container">
                 <div class="row">
+                <style>
+                        button {
+                            margin-top: 20px; !important;
+                        }
+                    </style>
+                   <a href="profilepage.php"><button type="button" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-menu-left"></i></button>
+                   </a>
                     <div class="col-md-4">
                         <h3>Achievements</h3>
                         <br>
+                        <br>
                         <div class="container">
-                            <div class="row col-md-6">
-                            <p class="achievements">
+                            <div class="row col-md-5">
+                            <div class="ach_left">
+                           <!--<p class="achievements">-->
                             ';
 
-
-
-if ($percentage_total <= 50) { ?>
-    <img src="../images/achievement6.png" alt="FaceSym Logo"  width="100" height="100">
+if ($percentage_total >= 90) { ?>
+    <img src="../images/achievement3.png" alt="FaceSym Logo"  width="100" height="100">
     <?php
 } else {
-    ?>
-    <img src="../images/achievement6_n.png" alt="FaceSym Logo"  width="100" height="100">
+?>
+<img src="../images/achievement3_n.png" alt="FaceSym Logo" width="100" height="100">
 <?php }
-echo ' Solatium - less than 50% right answers <br>
- <br>
- <br>
- ';
-
-
-if ($games >= 10) { ?>
-    <img src="../images/achievement1.png" alt="FaceSym Logo" width="100" height="100">
-    <?php
-} else {
-    ?>
-    <img src="../images/achievement1_n.png" alt="FaceSym Logo" width="100" height="100">
-<?php }
-echo ' Endurance - 10 games played <br>
+echo ' Champion - more than 90 percent right <br>
   <br>
  <br>
 ';
-
 
 
 if ($percentage_total >= 80) { ?>
@@ -124,7 +117,6 @@ echo ' Owl - over 80% right answers <br>
 ';
 
 
-
 if ($games >= 25) { ?>
     <img src="../images/achievement2.png" alt="FaceSym Logo" width="100" height="100">
     <?php
@@ -136,8 +128,6 @@ echo ' Hardcore - more than 25 games played <br>
   <br>
  <br>
  ';
-
-
 
 
 if ($points >= 3000) { ?>
@@ -154,18 +144,36 @@ echo ' Challenge accepted - more than 3000 points <br>
 
 
 
-if ($percentage_total >= 90) { ?>
-    <img src="../images/achievement3.png" alt="FaceSym Logo"  width="100" height="100">
+if ($games >= 10) { ?>
+    <img src="../images/achievement1.png" alt="FaceSym Logo" width="100" height="100">
     <?php
 } else {
     ?>
-    <img src="../images/achievement3_n.png" alt="FaceSym Logo" width="100" height="100">
+    <img src="../images/achievement1_n.png" alt="FaceSym Logo" width="100" height="100">
 <?php }
-echo ' Champion - more than 90 percent right <br>
+echo ' Endurance - 10 games played <br>
   <br>
  <br>
+';
 
-</p>
+
+
+if ($percentage_total <= 50) { ?>
+    <img src="../images/achievement6.png" alt="FaceSym Logo"  width="100" height="100">
+    <?php
+} else {
+    ?>
+    <img src="../images/achievement6_n.png" alt="FaceSym Logo"  width="100" height="100">
+<?php }
+echo ' Solatium - less than 50% right answers <br>
+ <br>
+ <br>
+
+
+
+
+</div>
+<!--</p>-->
 </div>
 </div>
 </div>
